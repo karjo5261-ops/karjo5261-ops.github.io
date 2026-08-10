@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ORDER AKUN PREMIUM SSH VMESS VLESS (VPN) </title>
-<meta name="theme-color" content="#000">
+<meta name="theme-color" content="#12001a">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Orbitron:wght@700;900&family=Share+Tech+Mono&display=swap');
 
@@ -12,40 +12,32 @@
 
 body {
   font-family: 'Rajdhani', sans-serif;
-  background: #000 url('bg-logo.png') no-repeat center center fixed;
-  background-size: contain;
-  background-color: #000;
-  color: #00ff41;
+  background: #12001a url('anime-bg.jpg') no-repeat center fixed; /* 1. GANTI INI KE GAMBAR ANIME LU */
+  background-size: cover; /* 2. GANTI JADI COVER BIAR FULL */
+  color: #00ff41; /* TETEP IJO */
   text-align: center;
   padding: 20px;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
+/* HAPUS SCANLINE, GANTI OVERLAY TIPIS BIAR TEMBUS */
 body::before {
   content: '';
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background:
-    rgba(0, 0, 0, 0.85),
-    linear-gradient(rgba(0,255,65,0.04) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 3px;
-  animation: scanline 8s linear infinite;
+  background: rgba(18, 0, 26, 0.5); /* overlay ungu tipis */
   pointer-events: none;
   z-index: 0;
-}
-@keyframes scanline {
- 0% { background-position: 0 0, 0 0; }
- 100% { background-position: 0 0, 0 100%; }
 }
 
 .container {
   max-width: 520px;
   margin: 20px auto;
-  background: rgba(0, 20, 0, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(0, 20, 0, 0.35); /* 3. TIPISIN DARI 0.88 JADI 0.35 */
+  backdrop-filter: blur(20px); /* 4. BLUR LEBIH KUAT */
+  -webkit-backdrop-filter: blur(20px);
   padding: 30px 25px;
   border-radius: 10px;
   box-shadow: 0 0 30px rgba(0,255,65,0.4);
@@ -75,12 +67,13 @@ body::before {
   right: 15px;
   width: 140px;
   height: 90px;
-  background: rgba(0,20,0,0.95);
+  background: rgba(0,20,0,0.5); /* TIPISIN */
   padding: 8px;
   border-radius: 10px;
   z-index: 999;
   border: 1px solid #00ff41;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   box-shadow: 0 0 15px rgba(0,255,65,0.4);
   user-select: none;
   touch-action: none;
@@ -147,30 +140,35 @@ h1 {
 }
 
 .card {
-  background: rgba(0, 255, 65, 0.06);
+  background: rgba(0, 255, 65, 0.08); /* TIPISIN */
   padding: 20px;
   border-radius: 10px;
   margin: 20px 0;
   text-align: left;
   border: 1px solid rgba(0,255,65,0.3);
+  backdrop-filter: blur(10px); /* TAMBAH BLUR DI CARD */
+  -webkit-backdrop-filter: blur(10px);
   transition: 0.4s;
 }
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 20px rgba(0,255,65,0.4);
   border-color: #00ff41;
+  background: rgba(0, 255, 65, 0.12);
 }
 .card h3 { color: #00ff41; text-align: center; margin: 0 0 15px 0; font-size: 19px; font-weight: 700; }
-.card p { background: rgba(0,0,0,0.6); padding: 10px; border-radius: 8px; margin: 10px 0; font-weight: 600; font-size: 15px; border-left: 3px solid #00ff41; font-family: 'Share Tech Mono', monospace; }
+.card p { background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; margin: 10px 0; font-weight: 600; font-size: 15px; border-left: 3px solid #00ff41; font-family: 'Share Tech Mono', monospace; } /* TIPISIN DARI 0.6 */
 .card.warning { background: rgba(255,0,65,0.1); border-left: 3px solid #ff0041; color: #ff4d7e; }
 
 .bayar {
-  background: rgba(0, 20, 0, 0.9);
+  background: rgba(0, 20, 0, 0.4); /* TIPISIN DARI 0.9 */
   padding: 20px;
   border-radius: 10px;
   margin: 20px 0;
   border: 2px solid #00ff41;
   box-shadow: 0 0 20px rgba(0,255,65,0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .bayar h3 { color: #00ff41; text-align: center; margin: 0 0 10px 0; font-size: 19px; }
 .qris { width: 200px; height: 200px; border-radius: 10px; margin: 10px auto; display: block; border: 2px solid #00ff41; box-shadow: 0 0 15px rgba(0,255,65,0.4); transition: 0.3s; filter: grayscale(1) brightness(1.2); }
@@ -187,6 +185,214 @@ h1 {
   font-weight: 700;
   border: none;
   width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0,255,65,0.3);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  letter-spacing: 1px;
+  font-family: 'Orbitron', sans-serif;
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: 0.5s;
+}
+.btn:hover::before { left: 100%; }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,255,65,0.6); }
+.btn-admin {
+  background: linear-gradient(90deg, #00c732, #009e28);
+}
+
+input, select {
+  width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px;
+  border: 1px solid #00ff41; background: rgba(0,0,0,0.3); color: #00ff41; font-size: 15px; /* TIPISIN */
+  position: relative; z-index: 2;
+  transition: 0.3s;
+  font-family: 'Share Tech Mono', monospace;
+  font-weight: 600;
+  backdrop-filter: blur(5px);
+}
+input:focus, select:focus { outline: none; border-color: #00ff41; box-shadow: 0 0 15px rgba(0,255,65,0.5); }
+input::placeholder { color: #009e28; }
+label { font-size: 14px; text-align: left; display: block; margin-top: 12px; font-weight: 700; color: #00ff41; }
+.footer { font-size: 12px; margin-top: 30px; color: #009e28; font-weight: 600; font-family: 'Share Tech Mono', monospace; }
+</style>
+</head>
+<body>
+
+<div class="music-box" id="dragMusic">
+  <div class="music-header">:: DRAG ME ::</div>
+  <div class="music-controls">
+    <button onclick="prevLagu()">⏮</button>
+    <button onclick="toggleMusic()">🔊</button>
+    <button onclick="nextLagu()">⏭</button>
+  </div>
+  <div id="judulLagu">Cyber Lo-fi</div>
+  <div class="resize-handle" id="resizeHandle"></div>
+</div>
+<audio id="bgm" loop></audio>
+
+<div class="container">
+ ★ CIKUYA DIGITAL STORE ★
+  <p class="subtitle">> SERVER PREMIUM TERCEPAT & STABIL</p>
+  <p class="produk">SSH | VMESS | VLESS | TROJAN</p>
+
+  <div class="card">
+    <h3>[+] KEUNGGULAN SERVER KAMI</h3>
+    <p>> SPEED WUZZ & ANTI NGELAG</p>
+    <p>> KUOTA UNLIMITED 24 JAM</p>
+    <p>> STABIL BUAT LIVE, GAME, SOSMED</p>
+    <p>> SERVER SINGAPORE & INDONESIA</p>
+    <p>> MASA AKTIF 30 HARI FULL</p>
+    <p class="warning">[!] DILARANG KERAS: MULTI LOGIN | JUDOL | PINJOL | BOKEP | HOMO</p>
+  </div>
+
+  <div class="card">
+    <h3>[+] DAFTAR HARGA 30 HARI</h3>
+    <p>> 1 PERANGKAT - Rp 9.000</p>
+    <p>> 2 PERANGKAT - Rp 11.000</p>
+    <p>> 3 PERANGKAT - Rp 13.000</p>
+    <p>> 4-5 PERANGKAT - Rp 15.000</p>
+    <p>> + KONFIG SIAP PAKAI - Rp 2.000</p>
+  </div>
+
+  <div class="bayar">
+    <h3>[+] BAYAR VIA QRIS</h3>
+    <p style="font-size:12px; color:#00c732; font-family: 'Share Tech Mono', monospace;">> Scan untuk bayar. Bisa DANA, GOPAY, OVO, BANK</p>
+    <img src="qris.png" class="qris" alt="Scan QRIS Disini">
+  </div>
+
+  <h3 style="color:#00ff41; margin-bottom:15px; font-size:19px;">[+] ORDER AKUN VPN</h3>
+  <form id="orderFormVpn">
+    <label>> Username:</label>
+    <input type="text" id="username" placeholder="contoh: cikuya123" required>
+
+    <label>> Pilih Jenis Akun:</label>
+    <select id="jenis" required>
+      <option value="">-- Pilih Protocol --</option>
+      <option value="SSH">SSH / SSL / OVPN</option>
+      <option value="VMESS">VMESS / V2RAY</option>
+      <option value="VLESS">VLESS / V2RAY</option>
+      <option value="TROJAN">TROJAN</option>
+    </select>
+
+    <label>> Pilih Paket:</label>
+    <select id="paket" required>
+      <option value="">-- Pilih Jumlah Perangkat --</option>
+      <option value="1 Perangkat - Rp 9.000">1 Perangkat - Rp 9.000</option>
+      <option value="2 Perangkat - Rp 11.000">2 Perangkat - Rp 11.000</option>
+      <option value="3 Perangkat - Rp 13.000">3 Perangkat - Rp 13.000</option>
+      <option value="4-5 Perangkat - Rp 15.000">4-5 Perangkat - Rp 15.000</option>
+    </select>
+
+    <label>> Pilih Server:</label>
+    <select id="server" required>
+      <option value="">-- Pilih --</option>
+      <option value="Singapore">SG - Singapore</option>
+      <option value="Indonesia">ID - Indonesia</option>
+    </select>
+
+    <button type="submit" class="btn">>> ORDER VIA WHATSAPP</button>
+  </form>
+  <a href="https://wa.me/6283845286102?text=Halo%20Bang%20Mau%20Order%20Cloudfront%20/%20DM%20Admin" class="btn btn-admin">>> ORDER CLOUDFRONT / DM ADMIN</a>
+</div>
+
+<p class="footer">© 2026 CIKUYA VPN. ACCESS GRANTED 24/7</p>
+
+<script>
+const playlist = [
+  {src: "musik1.mp3", judul: "Cyber Lo-fi"},
+  {src: "musik2.mp3", judul: "Night Drive"},
+  {src: "musik3.mp3", judul: "Digital Dream"}
+];
+let currentLagu = 0;
+let music = document.getElementById('bgm');
+let judulEl = document.getElementById('judulLagu');
+function loadLagu(){music.src = playlist[currentLagu].src; judulEl.innerText = playlist[currentLagu].judul; music.volume=0.3; music.play().catch(()=>{});}
+function toggleMusic(){if(music.paused){music.play();}else{music.pause();}}
+function nextLagu(){currentLagu = (currentLagu + 1) % playlist.length; loadLagu();}
+function prevLagu(){currentLagu = (currentLagu - 1 + playlist.length) % playlist.length; loadLagu();}
+music.addEventListener('ended', nextLagu); loadLagu();
+document.body.addEventListener('click', function startMusic() {if(music.paused) loadLagu();}, {once: true});
+
+document.getElementById('orderFormVpn').onsubmit = function(e) {
+  e.preventDefault();
+  var user = document.getElementById('username').value;
+  var jenis = document.getElementById('jenis').value;
+  var paket = document.getElementById('paket').value;
+  var server = document.getElementById('server').value;
+  if(!user ||!jenis ||!paket ||!server){ alert('Lengkapi semua data dulu bree'); return; }
+  var pesan = "Halo Bang Mau Order VPN Premium%0A%0AUsername: " + user + "%0AProtocol: " + jenis + "%0APaket: " + paket + "%0AServer: " + server + "%0AMasa Aktif: 30 Hari";
+  window.open("https://wa.me/6283845286102?text=" + pesan, '_blank');
+};
+
+// DRAG + RESIZE MUSIC BOX
+const dragMusic = document.getElementById('dragMusic');
+const resizeHandle = document.getElementById('resizeHandle');
+let isDragging = false, isResizing = false;
+let startX, startY, startWidth, startHeight, startLeft, startTop;
+
+dragMusic.querySelector('.music-header').addEventListener('mousedown', startDrag);
+dragMusic.querySelector('.music-header').addEventListener('touchstart', startDrag);
+function startDrag(e) {
+  e.preventDefault();
+  isDragging = true;
+  let evt = e.touches? e.touches[0] : e;
+  startX = evt.clientX; startY = evt.clientY;
+  startLeft = dragMusic.offsetLeft; startTop = dragMusic.offsetTop;
+  document.addEventListener('mousemove', drag);
+  document.addEventListener('touchmove', drag);
+  document.addEventListener('mouseup', stopDrag);
+  document.addEventListener('touchend', stopDrag);
+}
+function drag(e) {
+  if(!isDragging) return;
+  let evt = e.touches? e.touches[0] : e;
+  dragMusic.style.left = startLeft + evt.clientX - startX + 'px';
+  dragMusic.style.top = startTop + evt.clientY - startY + 'px';
+  dragMusic.style.right = 'auto';
+}
+function stopDrag() {
+  isDragging = false;
+  document.removeEventListener('mousemove', drag);
+  document.removeEventListener('touchmove', drag);
+}
+
+resizeHandle.addEventListener('mousedown', startResize);
+resizeHandle.addEventListener('touchstart', startResize);
+function startResize(e) {
+  e.preventDefault(); e.stopPropagation();
+  isResizing = true;
+  let evt = e.touches? e.touches[0] : e;
+  startX = evt.clientX; startY = evt.clientY;
+  startWidth = dragMusic.offsetWidth; startHeight = dragMusic.offsetHeight;
+  document.addEventListener('mousemove', resize);
+  document.addEventListener('touchmove', resize);
+  document.addEventListener('mouseup', stopResize);
+  document.addEventListener('touchend', stopResize);
+}
+function resize(e) {
+  if(!isResizing) return;
+  let evt = e.touches? e.touches[0] : e;
+  let newWidth = startWidth + evt.clientX - startX;
+  let newHeight = startHeight + evt.clientY - startY;
+  if(newWidth > 120) dragMusic.style.width = newWidth + 'px';
+  if(newHeight > 80) dragMusic.style.height = newHeight + 'px';
+}
+function stopResize() {
+  isResizing = false;
+  document.removeEventListener('mousemove', resize);
+  document.removeEventListener('touchmove', resize);
+}
+</script>
+</body>
+  </html>  width: 100%;
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s;
