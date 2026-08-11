@@ -14,25 +14,23 @@ body {
   font-family: 'Rajdhani', sans-serif;
   background: #12001a url('anime-bg.png') no-repeat center fixed;
   background-size: cover;
-  color: #000; /* GANTI JADI HITAM */
+  color: #000;
   text-align: center;
   padding: 20px;
   min-height: 100vh;
   overflow-x: hidden;
-  text-shadow: 0 0 5px rgba(255,255,255,0.8); /* KASIH OUTLINE PUTIH BIAR KEBACA */
+  text-shadow: 0 0 8px rgba(255,255,255,0.9);
 }
 
 /* OVERLAY DIMATIIN TOTAL */
-body::before {
-  display: none;
-}
+body::before { display: none; }
 
 .container {
   max-width: 520px;
   margin: 20px auto;
-  background: rgba(255, 255, 255, 0.15); /* PUTIH TRANSPARAN */
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.18); /* DIBIKIN LEBIH KACA */
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   padding: 30px 25px;
   border-radius: 10px;
   box-shadow: 0 0 40px rgba(0,0,0,0.5);
@@ -61,10 +59,45 @@ body::before {
   -webkit-backdrop-filter: blur(15px);
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
+.music-header {
+  cursor: move;
+  padding: 4px;
+  margin: -8px -8px 5px -8px;
+  background: rgba(0,0,0,0.1);
+  border-bottom: 1px solid #000;
+  border-radius: 10px 10px 0 0;
+  font-size: 9px;
+  color: #000;
+  font-family: 'Share Tech Mono', monospace;
+  font-weight: 700;
+}
+.resize-handle {
+  width: 15px;
+  height: 15px;
+  background: #ff0041;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: nwse-resize;
+  border-radius: 10px 0 10px 0;
+}
+.music-controls { display: flex; justify-content: center; }
+.music-box button {
+  background: linear-gradient(90deg, #ff0041, #c70033);
+  border: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 2px;
+  font-size: 12px;
+}
+#judulLagu { font-size: 9px; color: #000; margin-top: 4px; font-family: 'Share Tech Mono', monospace; text-align: center; font-weight: 700; }
 
 h1 {
   font-family: 'Orbitron', sans-serif;
-  color: #ff0041; /* GANTI MERAH */
+  color: #ff0041;
   text-shadow: 0 0 10px #ff0041, 0 0 20px #ff0041, 2px 2px 5px #000;
   font-size: 22px;
   font-weight: 900;
@@ -75,46 +108,62 @@ h1 {
 .produk {
   font-size: 17px;
   font-weight: 700;
-  color: #ff0041; /* MERAH */
+  color: #ff0041;
   letter-spacing: 1px;
   margin-bottom: 20px;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.1); /* SUPER TIPIS */
+  background: rgba(255, 255, 255, 0.12); /* DIBIKIN LEBIH KACA */
   padding: 20px;
   border-radius: 10px;
   margin: 20px 0;
   text-align: left;
   border: 1px solid rgba(0,0,0,0.2);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
 }
 .card h3 { color: #ff0041; text-align: center; margin: 0 0 15px 0; font-size: 19px; font-weight: 700; }
-.card p { 
-  background: rgba(255,255,255,0.3); /* PUTIH TIPIS */
-  color: #000; /* HITAM */
-  padding: 10px; border-radius: 8px; margin: 10px 0; 
-  font-weight: 700; font-size: 15px; border-left: 3px solid #ff0041; 
-  font-family: 'Share Tech Mono', monospace; 
+.card p {
+  background: rgba(255,255,255,0.2); /* DIBIKIN LEBIH TIPIS */
+  color: #000;
+  padding: 10px; border-radius: 8px; margin: 10px 0;
+  font-weight: 700; font-size: 15px; border-left: 3px solid #ff0041;
+  font-family: 'Share Tech Mono', monospace;
 }
 .card.warning { background: rgba(255,0,65,0.2); border-left: 3px solid #ff0041; color: #000; font-weight: 700; }
 
 .bayar {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.15); /* DIBIKIN LEBIH KACA */
   padding: 20px;
   border-radius: 10px;
   margin: 20px 0;
   border: 2px solid #ff0041;
   box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
 }
 .bayar h3 { color: #ff0041; text-align: center; margin: 0 0 10px 0; font-size: 19px; }
 .bayar p { color: #000; font-weight: 600; }
 
+/* FIX QRIS KECIL */
+.qris {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  margin: 10px auto;
+  display: block;
+  border: 2px solid #ff0041;
+  box-shadow: 0 0 15px rgba(255,0,65,0.4);
+  transition: 0.3s;
+}
+.qris:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255,0,65,0.7);
+}
+
 .btn {
   display: block;
-  background: linear-gradient(90deg, #ff0041, #c70033); /* MERAH */
-  color: #fff; /* TULISAN PUTIH */
+  background: linear-gradient(90deg, #ff0041, #c70033);
+  color: #fff;
   padding: 14px;
   border-radius: 8px;
   text-decoration: none;
@@ -128,9 +177,7 @@ h1 {
   box-shadow: 0 4px 15px rgba(255,0,65,0.3);
   font-family: 'Orbitron', sans-serif;
 }
-.btn-admin {
-  background: linear-gradient(90deg, #000, #333); /* HITAM */
-}
+.btn-admin { background: linear-gradient(90deg, #000, #333); }
 
 input, select {
   width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px;
@@ -141,7 +188,6 @@ input, select {
 label { font-size: 14px; text-align: left; display: block; margin-top: 12px; font-weight: 700; color: #000; }
 .footer { font-size: 12px; margin-top: 30px; color: #000; font-weight: 700; }
 
-/* SISA JS SAMA AJA GA USAH DIUBAH */
 </style>
 </head>
 <body>
