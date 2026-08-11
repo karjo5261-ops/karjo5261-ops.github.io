@@ -14,29 +14,25 @@ body {
   font-family: 'Rajdhani', sans-serif;
   background: #12001a url('anime-bg.png') no-repeat center fixed;
   background-size: cover;
-  color: #000;
+  color: #fff; /* GANTI JADI PUTIH BIAR KEBACA DI BG RAME */
   text-align: center;
   padding: 20px;
   min-height: 100vh;
   overflow-x: hidden;
-  text-shadow: 0 0 8px rgba(255,255,255,0.9);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.9); /* KASIH BAYANGAN HITAM BIAR TULISAN NAMPOL */
 }
 
-/* OVERLAY DIMATIIN TOTAL */
 body::before { display: none; }
 
+/* BOX SEMUA DIBIKIN TRANSPARAN TOTAL */
 .container {
   max-width: 520px;
   margin: 20px auto;
-  background: rgba(255, 255, 255, 0.18); /* DIBIKIN LEBIH KACA */
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
+  background: transparent; /* HILANG */
   padding: 30px 25px;
   border-radius: 10px;
-  box-shadow: 0 0 40px rgba(0,0,0,0.5);
-  border: 1px solid rgba(255,255,255,0.3);
-  position: relative;
-  z-index: 1;
+  border: none; /* HILANG */
+  box-shadow: none; /* HILANG */
   animation: floatUp 6s ease-in-out infinite;
 }
 @keyframes floatUp {
@@ -45,148 +41,85 @@ body::before { display: none; }
 }
 
 .music-box {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  width: 140px;
-  height: 90px;
-  background: rgba(255,255,255,0.2);
-  padding: 8px;
-  border-radius: 10px;
-  z-index: 999;
-  border: 1px solid #000;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  position: fixed; top: 15px; right: 15px; width: 140px; height: 90px;
+  background: rgba(0,0,0,0.4); /* ITEM TRANSPARAN DIKIT BIAR KEBACA */
+  padding: 8px; border-radius: 10px; z-index: 999; border: 1px solid rgba(255,255,255,0.3);
 }
 .music-header {
-  cursor: move;
-  padding: 4px;
-  margin: -8px -8px 5px -8px;
-  background: rgba(0,0,0,0.1);
-  border-bottom: 1px solid #000;
-  border-radius: 10px 10px 0 0;
-  font-size: 9px;
-  color: #000;
-  font-family: 'Share Tech Mono', monospace;
-  font-weight: 700;
+  cursor: move; padding: 4px; margin: -8px -8px 5px -8px;
+  background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px 10px 0 0; font-size: 9px; color: #fff;
+  font-family: 'Share Tech Mono', monospace; font-weight: 700;
 }
 .resize-handle {
-  width: 15px;
-  height: 15px;
-  background: #ff0041;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  cursor: nwse-resize;
-  border-radius: 10px 0 10px 0;
+  width: 15px; height: 15px; background: #ff0041; position: absolute;
+  right: 0; bottom: 0; cursor: nwse-resize; border-radius: 10px 0 10px 0;
 }
 .music-controls { display: flex; justify-content: center; }
 .music-box button {
-  background: linear-gradient(90deg, #ff0041, #c70033);
-  border: none;
-  padding: 6px 8px;
-  border-radius: 6px;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 0 2px;
-  font-size: 12px;
+  background: #ff0041; border: none;
+  padding: 6px 8px; border-radius: 6px; color: #fff; font-weight: bold;
+  cursor: pointer; margin: 0 2px; font-size: 12px;
 }
-#judulLagu { font-size: 9px; color: #000; margin-top: 4px; font-family: 'Share Tech Mono', monospace; text-align: center; font-weight: 700; }
+#judulLagu { font-size: 9px; color: #fff; margin-top: 4px; font-family: 'Share Tech Mono', monospace; text-align: center; font-weight: 700; }
 
 h1 {
-  font-family: 'Orbitron', sans-serif;
-  color: #ff0041;
-  text-shadow: 0 0 10px #ff0041, 0 0 20px #ff0041, 2px 2px 5px #000;
-  font-size: 22px;
-  font-weight: 900;
-  margin: 0 0 5px 0;
-  letter-spacing: 1.5px;
+  font-family: 'Orbitron', sans-serif; color: #ff0041;
+  text-shadow: 0 0 15px #ff0041, 0 2px 10px #000; /* GLOW MERAH + BAYANGAN */
+  font-size: 22px; font-weight: 900; margin: 0 0 5px 0; letter-spacing: 1.5px;
 }
-.subtitle { font-size: 14px; margin: 8px 0 20px 0; color: #000; font-weight: 700; font-family: 'Share Tech Mono', monospace; }
-.produk {
-  font-size: 17px;
-  font-weight: 700;
-  color: #ff0041;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-}
+.subtitle { font-size: 14px; margin: 8px 0 20px 0; color: #fff; font-weight: 700; font-family: 'Share Tech Mono', monospace; }
+.produk { font-size: 17px; font-weight: 700; color: #ff0041; letter-spacing: 1px; margin-bottom: 20px; }
 
+/* CARD TRANSPARAN. CUMA ADA GARIS + TULISAN */
 .card {
-  background: rgba(255, 255, 255, 0.12); /* DIBIKIN LEBIH KACA */
+  background: transparent;
   padding: 20px;
   border-radius: 10px;
   margin: 20px 0;
   text-align: left;
-  border: 1px solid rgba(0,0,0,0.2);
-  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.2); /* KASIH GARIS TIPIS DOANG */
 }
-.card h3 { color: #ff0041; text-align: center; margin: 0 0 15px 0; font-size: 19px; font-weight: 700; }
+.card h3 { color: #ff0041; text-align: center; margin: 0 0 15px 0; font-size: 19px; font-weight: 700; text-shadow: 0 2px 10px #000; }
 .card p {
-  background: rgba(255,255,255,0.2); /* DIBIKIN LEBIH TIPIS */
-  color: #000;
-  padding: 10px; border-radius: 8px; margin: 10px 0;
+  background: rgba(0,0,0,0.4); /* ITEM TRANSPARAN DIKIT BIAR KEBACA */
+  color: #fff; padding: 10px; border-radius: 8px; margin: 10px 0;
   font-weight: 700; font-size: 15px; border-left: 3px solid #ff0041;
   font-family: 'Share Tech Mono', monospace;
 }
-.card.warning { background: rgba(255,0,65,0.2); border-left: 3px solid #ff0041; color: #000; font-weight: 700; }
+.card.warning { background: rgba(255,0,65,0.3); border-left: 3px solid #ff0041; color: #fff; font-weight: 700; }
 
 .bayar {
-  background: rgba(255, 255, 255, 0.15); /* DIBIKIN LEBIH KACA */
-  padding: 20px;
-  border-radius: 10px;
-  margin: 20px 0;
+  background: rgba(0,0,0,0.4); /* ITEM TRANSPARAN DIKIT */
+  padding: 20px; border-radius: 10px; margin: 20px 0;
   border: 2px solid #ff0041;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  backdrop-filter: blur(20px);
 }
 .bayar h3 { color: #ff0041; text-align: center; margin: 0 0 10px 0; font-size: 19px; }
-.bayar p { color: #000; font-weight: 600; }
+.bayar p { color: #fff; font-weight: 600; }
 
-/* FIX QRIS KECIL */
+/* QRIS KECIL */
 .qris {
-  width: 150px;
-  height: 150px;
-  border-radius: 10px;
-  margin: 10px auto;
-  display: block;
-  border: 2px solid #ff0041;
-  box-shadow: 0 0 15px rgba(255,0,65,0.4);
-  transition: 0.3s;
-}
-.qris:hover {
-  transform: scale(1.05);
+  width: 150px; height: 150px; border-radius: 10px; margin: 10px auto;
+  display: block; border: 2px solid #ff0041;
   box-shadow: 0 0 25px rgba(255,0,65,0.7);
 }
 
 .btn {
-  display: block;
-  background: linear-gradient(90deg, #ff0041, #c70033);
-  color: #fff;
-  padding: 14px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin: 12px 0;
-  font-weight: 700;
-  border: none;
-  width: 100%;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 4px 15px rgba(255,0,65,0.3);
-  font-family: 'Orbitron', sans-serif;
+  display: block; background: linear-gradient(90deg, #ff0041, #c70033);
+  color: #fff; padding: 14px; border-radius: 8px; text-decoration: none;
+  margin: 12px 0; font-weight: 700; border: none; width: 100%;
+  font-size: 16px; cursor: pointer; transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(255,0,65,0.5); font-family: 'Orbitron', sans-serif;
 }
 .btn-admin { background: linear-gradient(90deg, #000, #333); }
 
 input, select {
   width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px;
-  border: 1px solid #000; background: rgba(255,255,255,0.5); color: #000; font-size: 15px;
-  font-family: 'Share Tech Mono', monospace;
-  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.5); background: rgba(0,0,0,0.5); color: #fff; font-size: 15px;
+  font-family: 'Share Tech Mono', monospace; font-weight: 600;
 }
-label { font-size: 14px; text-align: left; display: block; margin-top: 12px; font-weight: 700; color: #000; }
-.footer { font-size: 12px; margin-top: 30px; color: #000; font-weight: 700; }
+label { font-size: 14px; text-align: left; display: block; margin-top: 12px; font-weight: 700; color: #fff; }
+.footer { font-size: 12px; margin-top: 30px; color: #fff; font-weight: 700; }
 
 </style>
 </head>
