@@ -1,560 +1,613 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CIKUYA DIGITAL STORE♛ - ORDER KUOTA DAN VPN</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⭐️ CIKUYA DIGITAL STORE</title>
+    
+    <!-- Meta Open Graph untuk Preview Link (Menggunakan cover.png) -->
+    <meta property="og:title" content="🇮🇩 CIKUYA DIGITAL STORE 🇮🇩">
+    <meta property="og:description" content="FAST • TRUSTED • SECURE | VPN & TEMBAK PAKET">
+    <meta property="og:image" content="cover.png">
+    <meta property="og:type" content="website">
 
-<meta property="og:title" content="🇮🇩CIKUYA DIGITAL STORE🇮🇩">
-<meta property="og:description" content="FAST • TRUSTED • SECURE | VPN & TEMBAK PAKET">
-<meta property="og:image" content="cover.png">
-<meta property="og:type" content="website">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #05070f;
+            --card-bg: rgba(18, 26, 43, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --accent-cyan: #06b6d4;
+            --accent-blue: #3b82f6;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --gold: #fbbf24;
+            --green: #10b981;
+        }
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Chakra+Petch:ital,wght@0,600;0,700;1,700&display=swap');
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            /* Background menggunakan anime-bg.png dari repository kamu */
+            background: #05070f url('anime-bg.png') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-main);
+            padding: 16px 12px;
+            min-height: 100vh;
+        }
 
-body {
-  background: #05070f url('anime-bg.png') no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-  font-family: 'Chakra Petch', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 15px;
-}
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
 
-/* CONTAINER UTAMA / FRAME E-SPORTS TRANSPARAN */
-.poster {
-  width: 100%;
-  max-width: 720px;
-  background: rgba(4, 7, 17, 0.45);
-  border: 2px solid #00d2ff;
-  border-radius: 16px;
-  padding: 25px 20px;
-  box-shadow: 0 0 25px rgba(0, 210, 255, 0.4), inset 0 0 15px rgba(0, 210, 255, 0.2);
-  position: relative;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
+        /* HEADER */
+        header {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 16px;
+            text-align: center;
+            margin-bottom: 10px;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
 
-/* BRAND LOGO HEADER */
-.brand {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.brand h1 {
-  font-family: 'Teko', sans-serif;
-  font-size: 42px;
-  font-weight: 700;
-  font-style: italic;
-  letter-spacing: 2px;
-  color: #ffffff;
-  text-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff, 0 2px 8px #000;
-  line-height: 0.9;
-  text-transform: uppercase;
-}
-.brand p {
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: #38bdf8;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-shadow: 0 1px 5px #000;
-}
+        header h1 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 2px;
+        }
 
-/* MUSIC PLAYER INLINE */
-.music-box {
-  background: rgba(15, 25, 45, 0.6);
-  border: 1px solid #00d2ff;
-  border-radius: 8px;
-  padding: 6px 12px;
-  margin: -10px auto 15px auto;
-  max-width: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  backdrop-filter: blur(4px);
-}
-.music-info { font-size: 11px; color: #38bdf8; font-style: italic; font-weight: bold; }
-.music-controls button {
-  background: #00d2ff; border: none; color: #000;
-  width: 26px; height: 26px; border-radius: 4px;
-  font-weight: bold; cursor: pointer; margin-left: 2px;
-}
+        header p.subtitle {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            margin-bottom: 8px;
+        }
 
-/* GRID 2 KOLOM UTAMA */
-.grid-container {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 12px;
-}
+        /* MUSIC PLAYER */
+        .music-box {
+            background: rgba(15, 25, 45, 0.85);
+            border: 1px solid var(--accent-cyan);
+            border-radius: 12px;
+            padding: 8px 12px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .music-info { font-size: 0.75rem; color: var(--accent-cyan); font-weight: bold; }
+        .music-controls button {
+            background: var(--accent-cyan); border: none; color: #000;
+            width: 28px; height: 28px; border-radius: 6px;
+            font-weight: bold; cursor: pointer; margin-left: 4px;
+        }
 
-@media (max-width: 650px) {
-  .grid-container { grid-template-columns: 1fr; }
-}
+        .header-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-bottom: 12px;
+            font-size: 0.75rem;
+            color: #e2e8f0;
+        }
 
-/* KOTAK HARGA (PANEL TRANSPARAN) */
-.panel {
-  background: rgba(8, 15, 30, 0.45);
-  border: 1px solid #00d2ff;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: inset 0 0 10px rgba(0, 210, 255, 0.15);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-}
+        .header-info-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 4px 8px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
 
-.panel-title {
-  background: linear-gradient(90deg, rgba(0,210,255,0.3) 0%, rgba(0,210,255,0.05) 100%);
-  border-bottom: 2px solid #00d2ff;
-  padding: 6px 10px;
-  font-size: 15px;
-  font-weight: 700;
-  font-style: italic;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-radius: 6px 6px 0 0;
-  text-transform: uppercase;
-  text-shadow: 0 1px 4px #000;
-}
+        .contact-bar {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+        }
 
-/* LIST TABEL LEFT (VPN INDONESIA) */
-.list-box {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-top: 8px;
-}
-.list-item {
-  display: flex;
-  align-items: center;
-  background: rgba(15, 25, 45, 0.55);
-  border: 1px solid rgba(0, 210, 255, 0.3);
-  border-radius: 6px;
-  padding: 5px 8px;
-  font-weight: 700;
-  text-shadow: 0 1px 3px #000;
-}
-.list-item .no {
-  background: #00d2ff;
-  color: #000;
-  width: 16px;
-  height: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 3px;
-  font-size: 10px;
-  margin-right: 6px;
-  text-shadow: none;
-}
-.list-item .harga {
-  font-size: 13px;
-  font-style: italic;
-  color: #fff;
-}
-.list-item .durasi {
-  margin-left: auto;
-  font-size: 10px;
-  color: #38bdf8;
-  font-style: italic;
-}
-.badge-ip {
-  background: #3b82f6;
-  color: #fff;
-  font-size: 8px;
-  padding: 1px 4px;
-  border-radius: 3px;
-  margin-left: 5px;
-  text-shadow: none;
-}
+        .contact-btn {
+            padding: 8px 4px;
+            border-radius: 12px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            transition: all 0.2s ease;
+        }
 
-/* TABEL RIGHT (TEMBAK PAKET XL) */
-.table-custom {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 5px;
-  margin-top: 2px;
-}
-.table-custom th {
-  font-size: 8px;
-  color: #cbd5e1;
-  text-transform: uppercase;
-  padding: 3px 2px;
-  text-shadow: 0 1px 3px #000;
-}
-.table-custom td {
-  background: rgba(15, 25, 45, 0.55);
-  border-top: 1px solid rgba(0, 210, 255, 0.3);
-  border-bottom: 1px solid rgba(0, 210, 255, 0.3);
-  padding: 5px 3px;
-  font-size: 10px;
-  text-align: center;
-  font-weight: 700;
-  text-shadow: 0 1px 3px #000;
-}
-.table-custom td:first-child {
-  border-left: 1px solid rgba(0, 210, 255, 0.3);
-  border-radius: 6px 0 0 6px;
-  text-align: left;
-  padding-left: 6px;
-}
-.table-custom td:last-child {
-  border-right: 1px solid rgba(0, 210, 255, 0.3);
-  border-radius: 0 6px 6px 0;
-  color: #c084fc;
-  font-style: italic;
-  font-size: 11px;
-}
-.badge-sub {
-  display: inline-block;
-  background: #16a34a;
-  color: #fff;
-  font-size: 7px;
-  padding: 1px 3px;
-  border-radius: 3px;
-  text-shadow: none;
-}
+        .contact-btn.wa i { color: #22c55e; }
+        .contact-btn.tele i { color: #38bdf8; }
+        .contact-btn.group i { color: #a855f7; }
+        .contact-btn.status i { color: #f59e0b; }
 
-/* PRICE TAG VARIATION */
-.price-only { color: #38bdf8; display: block; }
-.price-vpn { color: #fb7185; display: block; font-size: 10px; }
+        .instruction-box {
+            background: rgba(6, 182, 212, 0.08);
+            border: 1px dashed rgba(6, 182, 212, 0.3);
+            border-radius: 12px;
+            padding: 10px 12px;
+            font-size: 0.73rem;
+            color: #a5f3fc;
+            margin-bottom: 12px;
+            text-align: center;
+            line-height: 1.4;
+        }
 
-/* FORM ORDER & BUTTONS */
-.order-section {
-  margin-top: 15px;
-  background: rgba(8, 15, 30, 0.45);
-  border: 1px solid #00d2ff;
-  border-radius: 10px;
-  padding: 15px;
-  backdrop-filter: blur(3px);
-}
-.order-section h3 {
-  font-size: 14px;
-  color: #00d2ff;
-  font-style: italic;
-  margin-bottom: 10px;
-  text-align: left;
-  text-shadow: 0 1px 4px #000;
-}
-.order-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-@media (max-width: 480px) {
-  .order-form { grid-template-columns: 1fr; }
-}
-.order-form input, .order-form select {
-  width: 100%;
-  padding: 8px 10px;
-  background: rgba(15, 25, 45, 0.7);
-  border: 1px solid rgba(0, 210, 255, 0.4);
-  border-radius: 6px;
-  color: #fff;
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: 12px;
-}
+        .category-nav {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+        }
 
-/* PREVIEW GELEMBUNG CHAT */
-.order-preview-box {
-  grid-column: 1 / -1;
-  background: rgba(245, 245, 245, 0.9);
-  color: #222;
-  padding: 12px 16px;
-  border-radius: 12px;
-  font-size: 13px;
-  line-height: 1.5;
-  margin-top: 5px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  font-family: sans-serif;
-  white-space: pre-wrap;
-}
-.order-preview-box .preview-title {
-  font-size: 10px;
-  font-weight: bold;
-  color: #666;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-  display: block;
-}
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+            padding: 10px;
+            border-radius: 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
 
-.btn-group {
-  grid-column: 1 / -1;
-  display: flex;
-  gap: 8px;
-  margin-top: 5px;
-}
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            color: #ffffff;
+            border-color: transparent;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.35);
+        }
 
-.btn-wa {
-  flex: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: linear-gradient(90deg, #25d366 0%, #128c7e 100%);
-  color: #fff;
-  font-weight: 700;
-  font-style: italic;
-  text-transform: uppercase;
-  padding: 12px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  font-size: 13px;
-  box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
-  transition: 0.2s;
-}
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: all 0.25s ease;
+        }
 
-.btn-qris {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(90deg, #ff0041 0%, #a8002b 100%);
-  color: #fff;
-  font-weight: 700;
-  font-style: italic;
-  text-transform: uppercase;
-  padding: 12px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  font-size: 13px;
-  box-shadow: 0 0 15px rgba(255, 0, 65, 0.4);
-}
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-.btn-wa:hover, .btn-qris:hover {
-  transform: translateY(-2px);
-}
+        .section-banner {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(59, 130, 246, 0.15));
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 14px;
+            padding: 10px 12px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
 
-/* MODAL QRIS */
-.modal {
-  display: none; position: fixed; z-index: 9999;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.85);
-  justify-content: center; align-items: center;
-}
-.modal-content {
-  background: rgba(11, 21, 40, 0.95); border: 2px solid #ff0041;
-  padding: 20px; border-radius: 12px; text-align: center;
-  max-width: 300px; width: 90%;
-  box-shadow: 0 0 25px rgba(255,0,65,0.6);
-}
-.modal-content img { width: 200px; height: 200px; border-radius: 8px; border: 1px solid #ff0041; margin: 10px 0; }
-.close-btn {
-  background: #ff0041; border: none; color: #fff;
-  padding: 6px 15px; border-radius: 6px; font-weight: bold; cursor: pointer;
-}
+        .section-banner h2 {
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            letter-spacing: 0.5px;
+        }
 
-/* FOOTER BADGES GARANSI */
-.footer-badges {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 15px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(0, 210, 255, 0.2);
-}
-.badge-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 10px;
-  font-weight: 700;
-  color: #cbd5e1;
-  text-transform: uppercase;
-  text-shadow: 0 1px 3px #000;
-}
-.badge-item span { color: #fff; display: block; }
-</style>
+        .section-banner p {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 18px;
+            padding: 14px;
+            margin-bottom: 12px;
+            backdrop-filter: blur(12px);
+        }
+
+        .card-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+        }
+
+        .price-item {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 8px 4px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            transition: all 0.2s ease;
+        }
+
+        .price-item:hover {
+            border-color: var(--accent-cyan);
+            background: rgba(6, 182, 212, 0.15);
+        }
+
+        .price-duration { font-size: 0.68rem; color: var(--text-muted); }
+        .price-val { font-size: 0.8rem; font-weight: 700; color: var(--accent-cyan); }
+
+        .inject-item {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+        }
+
+        .inject-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .inject-prices {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            font-size: 0.75rem;
+        }
+
+        .price-badge {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 6px 10px;
+            border-radius: 6px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: background 0.2s ease;
+            display: inline-block;
+        }
+
+        .price-badge:hover {
+            background: rgba(6, 182, 212, 0.2);
+        }
+
+        .price-badge b { color: var(--accent-cyan); }
+
+        .feature-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .feature-list li {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 8px 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .feature-list i { color: var(--green); }
+
+        .notice-box {
+            background: rgba(251, 191, 36, 0.08);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            border-radius: 12px;
+            padding: 10px 12px;
+            font-size: 0.72rem;
+            color: #fde68a;
+            margin-top: 12px;
+            line-height: 1.4;
+        }
+
+        .cta-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+            margin-top: 12px;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            cursor: pointer;
+        }
+
+        .qris-btn {
+            background: linear-gradient(135deg, #ff0041, #a8002b);
+            box-shadow: 0 4px 15px rgba(255, 0, 65, 0.3);
+            margin-top: 8px;
+        }
+
+        /* MODAL QRIS */
+        .modal {
+            display: none; position: fixed; z-index: 9999;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            justify-content: center; align-items: center;
+        }
+        .modal-content {
+            background: rgba(11, 21, 40, 0.95); border: 2px solid #ff0041;
+            padding: 20px; border-radius: 16px; text-align: center;
+            max-width: 300px; width: 90%;
+            box-shadow: 0 0 25px rgba(255,0,65,0.6);
+        }
+        .modal-content img { width: 200px; height: 200px; border-radius: 8px; border: 1px solid #ff0041; margin: 10px 0; }
+        .close-btn {
+            background: #ff0041; border: none; color: #fff;
+            padding: 6px 15px; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 14px 0 6px 0;
+            font-size: 0.68rem;
+            color: var(--text-muted);
+        }
+    </style>
 </head>
 <body>
 
-<div class="poster">
-  <div class="brand">
-    <h1>♪cikuya_store♪</h1>
-    <p>FAST • TRUSTED • SECURE</p>
-  </div>
+<div class="container">
 
-  <div class="music-box">
-    <div class="music-info" id="judulLagu">🎵 Cyber Lo-fi</div>
-    <div class="music-controls">
-      <button onclick="prevLagu()">⏮</button>
-      <button onclick="toggleMusic()">🔊</button>
-      <button onclick="nextLagu()">⏭</button>
+    <header>
+        <h1>⭐️ CIKUYA DIGITAL STORE</h1>
+        <p class="subtitle">Proses Cepat • QRIS Ready • Server Premium</p>
+
+        <!-- MUSIC PLAYER INLINE -->
+        <div class="music-box">
+            <div class="music-info" id="judulLagu">🎵 Cyber Lo-fi</div>
+            <div class="music-controls">
+                <button onclick="prevLagu()">⏮</button>
+                <button onclick="toggleMusic()">🔊</button>
+                <button onclick="nextLagu()">⏭</button>
+            </div>
+        </div>
+        <audio id="bgm" loop></audio>
+        
+        <div class="header-info-list">
+            <div class="header-info-item">✅ Cocok user & reseller</div>
+            <div class="header-info-item">✅ Bisa Hubungi Admin di bawah ini:</div>
+        </div>
+
+        <div class="contact-bar">
+            <a href="https://wa.me/6283845286102" class="contact-btn wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://t.me/Aprilia_1999" class="contact-btn tele" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+            <a href="https://chat.whatsapp.com/BmMe81cA7GLCrRnbSGNJgv?s=cl&p=a&ilr=1" class="contact-btn group" target="_blank"><i class="fas fa-users"></i> WA Group</a>
+            <a href="https://status.rajaserver.web.id/" class="contact-btn status" target="_blank"><i class="fas fa-server"></i> Server Status</a>
+        </div>
+    </header>
+
+    <div class="instruction-box">
+        💡 <b>Cara Order Cepat:</b> Klik pada harga/paket yang kamu pilih, lalu kirim pesan otomatis ke WhatsApp.
     </div>
-  </div>
-  <audio id="bgm" loop></audio>
 
-  <div class="grid-container">
+    <div class="category-nav">
+        <button class="tab-btn active" onclick="openTab(event, 'vpn-cf')"><i class="fas fa-shield-alt"></i> VPN Cloudflare</button>
+        <button class="tab-btn" onclick="openTab(event, 'ssh-cf')"><i class="fas fa-bolt"></i> SSH Cloudfront</button>
+        <button class="tab-btn" onclick="openTab(event, 'inject-data')"><i class="fas fa-wifi"></i> Inject Kuota</button>
+        <button class="tab-btn" onclick="openTab(event, 'fitur')"><i class="fas fa-star"></i> Info Server</button>
+    </div>
+
+    <div id="vpn-cf" class="tab-content active">
+        <div class="section-banner">
+            <h2>💎 VPN PREMIUM CLOUDFLARE</h2>
+            <p>Akun VPN – SSH • VMESS • VLESS • TROJAN<br>(Akun Only / Tanpa Config)</p>
+        </div>
+
+        <div class="card">
+            <div class="card-title"><span>🇮🇩 INDONESIA (MAX 1 DEVICE)</span></div>
+            <div class="price-grid">
+                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '1 Device', '3 Hari', 'Rp 1.000')" class="price-item">
+                    <div class="price-duration">3 Hari</div><div class="price-val">Rp 1.000</div>
+                </a>
+                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '1 Device', '7 Hari', 'Rp 1.500')" class="price-item">
+                    <div class="price-duration">7 Hari</div><div class="price-val">Rp 1.500</div>
+                </a>
+                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '1 Device', '15 Hari', 'Rp 3.000')" class="price-item">
+                    <div class="price-duration">15 Hari</div><div class="price-val">Rp 3.000</div>
+                </a>
+                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '1 Device', '22 Hari', 'Rp 4.500')" class="price-item">
+                    <div class="price-duration">22 Hari</div><div class="price-val">Rp 4.500</div>
+                </a>
+                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '1 Device', '30 Hari', 'Rp 6.000')" class="price-item">
+                    <div class="price-duration">30 Hari</div><div class="price-val">Rp 6.000</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title"><span>🇮🇩 INDONESIA (MAX 2 DEVICE)</span></div>
+            <div class="price-grid">
+                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '2 Device', '3 Hari', 'Rp 1.500')" class="price-item">
+                    <div class="price-duration">3 Hari</div><div class="price-val">Rp 1.500</div>
+                </a>
+                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '2 Device', '7 Hari', 'Rp 2.500')" class="price-item">
+                    <div class="price-duration">7 Hari</div><div class="price-val">Rp 2.500</div>
+                </a>
+                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '2 Device', '15 Hari', 'Rp 4.000')" class="price-item">
+                    <div class="price-duration">15 Hari</div><div class="price-val">Rp 4.000</div>
+                </a>
+                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '2 Device', '22 Hari', 'Rp 6.000')" class="price-item">
+                    <div class="price-duration">22 Hari</div><div class="price-val">Rp 6.000</div>
+                </a>
+                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '2 Device', '30 Hari', 'Rp 8.000')" class="price-item">
+                    <div class="price-duration">30 Hari</div><div class="price-val">Rp 8.000</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title"><span>🇮🇩 INDONESIA (MAX 5 DEVICE)</span></div>
+            <div class="price-grid">
+                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '5 Device', '3 Hari', 'Rp 2.000')" class="price-item">
+                    <div class="price-duration">3 Hari</div><div class="price-val">Rp 2.000</div>
+                </a>
+                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '5 Device', '7 Hari', 'Rp 3.500')" class="price-item">
+                    <div class="price-duration">7 Hari</div><div class="price-val">Rp 3.500</div>
+                </a>
+                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '5 Device', '15 Hari', 'Rp 5.000')" class="price-item">
+                    <div class="price-duration">15 Hari</div><div class="price-val">Rp 5.000</div>
+                </a>
+                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '5 Device', '22 Hari', 'Rp 7.000')" class="price-item">
+                    <div class="price-duration">22 Hari</div><div class="price-val">Rp 7.000</div>
+                </a>
+                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '5 Device', '30 Hari', 'Rp 10.000')" class="price-item">
+                    <div class="price-duration">30 Hari</div><div class="price-val">Rp 10.000</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="ssh-cf" class="tab-content">
+        <div class="card">
+            <div class="inject-item">
+                <div class="inject-head">
+                    <span>Cloudfront Reguler (Biznet)</span>
+                    <span style="color: var(--green);">Unlimited</span>
+                </div>
+                <div class="inject-prices">
+                    <a href="javascript:void(0)" onclick="orderSSH('Cloudfront Reguler (Biznet)', '3 Device', '30 Hari (1 Bulan)', 'Rp 11.000')" class="price-badge">
+                        Limit IP: <b>3 Device</b> | Harga: <b>Rp 11.000 / bln</b>
+                    </a>
+                </div>
+            </div>
+            <div class="inject-item">
+                <div class="inject-head">
+                    <span>Cloudfront Premium (Media Antar Nusa)</span>
+                    <span style="color: var(--gold);">Stok 50</span>
+                </div>
+                <div class="inject-prices">
+                    <a href="javascript:void(0)" onclick="orderSSH('Cloudfront Premium (Media Antar Nusa)', '3 Device', '30 Hari (1 Bulan)', 'Rp 13.000')" class="price-badge">
+                        Limit IP: <b>3 Device</b> | Harga: <b>Rp 13.000 / bln</b>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="inject-data" class="tab-content">
+        <div class="card">
+            <div class="inject-item" style="border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.1);">
+                <div class="inject-head">
+                    <span style="color: #c084fc;">🟣 AXIS WA 13GB (14 Hari) + VPN 30D</span>
+                    <span style="color: var(--green); font-size: 0.68rem;">HOT ITEM</span>
+                </div>
+                <div class="inject-prices">
+                    <a href="javascript:void(0)" onclick="orderInject('AXIS WA 13GB (14 Hari) + VPN 30D', 'Paket + VPN', 'Rp 27.000')" class="price-badge">
+                        Paket + VPN: <b>Rp 27.000</b>
+                    </a>
+                </div>
+            </div>
+
+            <div class="inject-item">
+                <div class="inject-head">
+                    <span>XL EDU 15GB (7 Hari)</span>
+                </div>
+                <div class="inject-prices">
+                    <a href="javascript:void(0)" onclick="orderInject('XL EDU 15GB (7 Hari)', 'Data Only', 'Rp 12.000')" class="price-badge">
+                        Data Only: <b>Rp 12.000</b>
+                    </a>
+                    <a href="javascript:void(0)" onclick="orderInject('XL EDU 15GB (7 Hari)', '+ VPN 7D', 'Rp 14.000')" class="price-badge">
+                        + VPN 7D: <b>Rp 14.000</b>
+                    </a>
+                </div>
+            </div>
+
+            <div class="inject-item">
+                <div class="inject-head">
+                    <span>XL Conference 15GB (7 Hari)</span>
+                </div>
+                <div class="inject-prices">
+                    <a href="javascript:void(0)" onclick="orderInject('XL Conference 15GB (7 Hari)', 'Data Only', 'Rp 15.000')" class="price-badge">
+                        Data Only: <b>Rp 15.000</b>
+                    </a>
+                    <a href="javascript:void(0)" onclick="orderInject('XL Conference 15GB (7 Hari)', '+ VPN 7D', 'Rp 17.000')" class="price-badge">
+                        + VPN 7D: <b>Rp 17.000</b>
+                    </a>
+                </div>
+            </div>
+
+            <div class="inject-item">
+                <div class="inject-head">
+                    <span>XL iFlix 14GB / 30GB (30 Hari)</span>
+                </div>
+                <div class="inject-prices">
+                    <a href="javascript:void(0)" onclick="orderInject('XL iFlix 14GB / 30GB (30 Hari)', 'Data Only', 'Rp 17.000')" class="price-badge">
+                        Data Only: <b>Rp 17.000</b>
+                    </a>
+                    <a href="javascript:void(0)" onclick="orderInject('XL iFlix 14GB / 30GB (30 Hari)', '+ VPN 30D', 'Rp 25.000')" class="price-badge">
+                        + VPN 30D: <b>Rp 25.000</b>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fitur" class="tab-content">
+        <div class="card">
+            <div class="card-title">Keunggulan Server</div>
+            <ul class="feature-list">
+                <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
+                <li><i class="fas fa-check"></i> Support STB OpenWRT</li>
+                <li><i class="fas fa-check"></i> YouTube 4K Smooth</li>
+                <li><i class="fas fa-check"></i> Server Tidak Error</li>
+                <li><i class="fas fa-check"></i> Fast Speed Download</li>
+                <li><i class="fas fa-check"></i> Anti Reconnect</li>
+            </ul>
+        </div>
+    </div>
+
+    <a href="javascript:void(0)" onclick="orderGeneral()" class="cta-btn">
+        <i class="fab fa-whatsapp" style="font-size: 1rem;"></i> Order via WhatsApp
+    </a>
     
-    <div class="panel">
-      <div class="panel-title">
-        🛡️ VPN / CONFIG ID BIZNET & HERZA 🇮🇩 
-      </div>
-      <div class="list-box">
-        <div class="list-item">
-          <span class="no">1.</span>
-          <span class="harga">Rp 2.000</span>
-          <span class="durasi">( 3 HARI / 1 IP )</span>
-        </div>
-        <div class="list-item">
-          <span class="no">2.</span>
-          <span class="harga">Rp 4.000</span>
-          <span class="durasi">( 7 HARI / 1 IP )</span>
-        </div>
-        <div class="list-item">
-          <span class="no">3.</span>
-          <span class="harga">Rp 5.000</span>
-          <span class="durasi">( 14 HARI / 1 IP )</span>
-        </div>
-        <div class="list-item">
-          <span class="no">4.</span>
-          <span class="harga">Rp 8.000</span>
-          <span class="durasi">( 30 HARI / 1 IP )</span>
-        </div>
-        <div class="list-item">
-          <span class="no">5.</span>
-          <span class="harga">Rp 10.000</span>
-          <span class="badge-ip">MAX 2 IP</span>
-          <span class="durasi">( 30 HARI )</span>
-        </div>
-        <div class="list-item">
-          <span class="no">6.</span>
-          <span class="harga">Rp 10.000</span>
-          <span class="badge-ip" style="background:#8b5cf6;">SSH/CONFIG Cloudfront</span>
-          <span class="durasi">( 30 HARI )</span>
-        </div>
-        <div class="list-item">
-          <span class="no">7.</span>
-          <span class="harga">Rp 12.000</span>
-          <span class="badge-ip">MAX 3 IP</span>
-          <span class="durasi">( 30 HARI )</span>
-        </div>
-        <div class="list-item">
-          <span class="no">8.</span>
-          <span class="harga">Rp 13.000</span>
-          <span class="badge-ip" style="background:#e11d48;">MAX 5 IP</span>
-          <span class="durasi">( 30 HARI )</span>
-        </div>
-      </div>
-    </div>
+    <a href="javascript:void(0)" onclick="openModal()" class="cta-btn qris-btn">
+        <i class="fas fa-qrcode" style="font-size: 1rem;"></i> Cek QRIS Pembayaran
+    </a>
 
-    <div class="panel">
-      <div class="panel-title" style="border-color:#a855f7;">
-        ⚡ TEMBAK PAKET XL
-      </div>
-      <table class="table-custom">
-        <thead>
-          <tr>
-            <th>PAKET</th>
-            <th>KUOTA</th>
-            <th>HARGA</th>
-            <th>AKTIF</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1. XL EDUKASI<br><span class="badge-sub">REKOMENDASI</span></td>
-            <td>15GB 🎓</td>
-            <td>
-              <span class="price-only">Rp 12k <small style="font-size:7px;color:#ddd">(Data Only)</small></span>
-              <span class="price-vpn">Rp 15k <small style="font-size:7px;color:#fca5a5">(Data + VPN)</small></span>
-            </td>
-            <td>7<br><small style="font-size:8px">HARI</small></td>
-          </tr>
-          <tr>
-            <td>2. XL EXTRA KUOTA<br><span class="badge-sub" style="background:#9333ea;">PILIHAN HEMAT</span></td>
-            <td>30GB ☁️</td>
-            <td>
-              <span class="price-only">Rp 17k <small style="font-size:7px;color:#ddd">(Data Only)</small></span>
-              <span class="price-vpn">Rp 25k <small style="font-size:7px;color:#fca5a5">(Data + VPN)</small></span>
-            </td>
-            <td>30<br><small style="font-size:8px">HARI</small></td>
-          </tr>
-          <tr>
-            <td>3. XL CONFERENCE<br><span class="badge-sub" style="background:#2563eb;">COCOK ALL TKP</span></td>
-            <td>15GB 💻</td>
-            <td>
-              <span class="price-only">Rp 15k <small style="font-size:7px;color:#ddd">(Data Only)</small></span>
-              <span class="price-vpn">Rp 17k <small style="font-size:7px;color:#fca5a5">(Data + VPN)</small></span>
-            </td>
-            <td>7<br><small style="font-size:8px">HARI</small></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <footer>
+        <p>© 2025-2026 Cikuya Digital Store - PT. RAJA SERVER PREMIUM</p>
+    </footer>
 
-  </div>
-
-  <div class="order-section">
-    <h3>🛒 FORM PEMESANAN QUICK ORDER</h3>
-    <form id="orderForm" class="order-form">
-      <input type="text" id="username" placeholder="Username / Nama (TKP)" oninput="updatePreview()" required>
-      
-      <select id="layanan" onchange="updateFormFields(); updatePreview();" required>
-        <option value="">-- Pilih Paket & Varian --</option>
-        <optgroup label="🛡️ VPN Indonesia">
-          <option value="VPN ID (3 Hari / 1 IP - Rp 2.000)" data-type="vpn">VPN ID 3 Hari (1 IP) - Rp 2.000</option>
-          <option value="VPN ID (7 Hari / 1 IP - Rp 4.000)" data-type="vpn">VPN ID 7 Hari (1 IP) - Rp 4.000</option>
-          <option value="VPN ID (14 Hari / 1 IP - Rp 5.000)" data-type="vpn">VPN ID 14 Hari (1 IP) - Rp 5.000</option>
-          <option value="VPN ID Bulanan (30 Hari / 1 IP - Rp 8.000)" data-type="vpn">VPN ID 30 Hari (1 IP) - Rp 8.000</option>
-          <option value="VPN ID Bulanan (30 Hari / Max 2 IP - Rp 10.000)" data-type="vpn">VPN ID 30 Hari (Max 2 IP) - Rp 10.000</option>
-          <option value="Cloudfront ID (30 Hari / 3 IP - Rp 13.000)" data-type="vpn">IFLIX & ILPED Cloudfront 3 IP (30 Hari) - Rp 13.000</option>
-          <option value="VPN ID Bulanan (30 Hari / Max 3 IP - Rp 12.000)" data-type="vpn">VPN ID 30 Hari (Max 3 IP) - Rp 12.000</option>
-          <option value="VPN ID Bulanan (30 Hari / Max 5 IP - Rp 13.000)" data-type="vpn">VPN ID 30 Hari (Max 5 IP) - Rp 13.000</option>
-        </optgroup>
-        <optgroup label="📦 XL Edukasi 15GB (7 Hari)">
-          <option value="XL Edukasi 15GB (Data Only - Rp 12.000)" data-type="xl">XL Edukasi 15GB [Data Only] - Rp 12.000</option>
-          <option value="XL Edukasi 15GB + VPN 7 Hari (Rp 15.000)" data-type="xl">XL Edukasi 15GB [Data + VPN 7 Hari] - Rp 15.000</option>
-        </optgroup>
-        <optgroup label="📦 XL Extra Kuota 30GB (30 Hari)">
-          <option value="XL Extra Kuota 30GB (Data Only - Rp 17.000)" data-type="xl">XL Extra Kuota 30GB [Data Only] - Rp 17.000</option>
-          <option value="XL Extra Kuota 30GB + VPN 30 Hari (Rp 25.000)" data-type="xl">XL Extra Kuota 30GB [Data + VPN 30 Hari] - Rp 25.000</option>
-        </optgroup>
-        <optgroup label="📦 XL Conference 15GB (7 Hari)">
-          <option value="XL Conference 15GB (Data Only - Rp 15.000)" data-type="xl">XL Conference 15GB [Data Only] - Rp 15.000</option>
-          <option value="XL Conference 15GB + VPN 7 Hari (Rp 17.000)" data-type="xl">XL Conference 15GB [Data + VPN 7 Hari] - Rp 17.000</option>
-        </optgroup>
-      </select>
-
-      <input type="tel" id="nomorHP" placeholder="Masukkan Nomor HP XL (08xxx)" oninput="updatePreview()" style="display: none; grid-column: 1 / -1;">
-      
-      <input type="text" id="konfig" placeholder="Isi Konfig (SELAIN XL EDU, CONFER & IFLIX)" oninput="updatePreview()" style="display: none; grid-column: 1 / -1;">
-
-      <div class="order-preview-box">
-        <span class="preview-title">Preview Pesanan WhatsApp:</span>
-        <div id="previewText">Halo Admin Cikuya Store, saya mau order:
-• Nama & TKP: [User (TKP)]
-• Pilihan Paket: [Belum dipilih]
-
-Mohon diproses, terima kasih!</div>
-      </div>
-
-      <div class="btn-group">
-        <button type="submit" class="btn-wa">💬 KONFIRMASI ORDERAN</button>
-        <button type="button" class="btn-qris" onclick="openModal()">♠ QRIS DISINI</button>
-      </div>
-    </form>
-  </div>
-
-  <div class="footer-badges">
-    <div class="badge-item">🛡️ <span>AMAN 100%</span></div>
-    <div class="badge-item">⚡ <span>CEPAT STABIL</span></div>
-    <div class="badge-item">🤝 <span>TRUSTED TERPERCAYA</span></div>
-    <div class="badge-item">©️ <span>CIKUYA DIGITAL STORE♛</span></div>
-  </div>
 </div>
 
+<!-- MODAL QRIS -->
 <div class="modal" id="qrisModal">
   <div class="modal-content">
-    <h3 style="color:#ff0041; font-size:16px;">♠ BAYAR VIA QRIS ♠</h3>
+    <h3 style="color:#ff0041; font-size:16px; margin-bottom: 5px;">♠ BAYAR VIA QRIS ♠</h3>
     <img src="qris.png" alt="Scan QRIS Disini">
     <p style="font-size:11px; color:#aaa; margin-bottom:10px;">DANA, GOPAY, OVO, BANK</p>
     <button class="close-btn" onclick="closeModal()">TUTUP</button>
@@ -562,114 +615,65 @@ Mohon diproses, terima kasih!</div>
 </div>
 
 <script>
-// TAMPILKAN INPUT KHUSUS SESUAI PAKET
-function updateFormFields() {
-  var layananSelect = document.getElementById('layanan');
-  var selectedOption = layananSelect.options[layananSelect.selectedIndex];
-  var type = selectedOption ? selectedOption.getAttribute('data-type') : '';
+    const adminWA = "6283845286102";
 
-  var inputHP = document.getElementById('nomorHP');
-  var inputKonfig = document.getElementById('konfig');
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) { tabcontent[i].classList.remove("active"); }
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
 
-  if (type === 'xl') {
-    inputHP.style.display = 'block';
-    inputHP.setAttribute('required', 'required');
-    inputKonfig.style.display = 'none';
-    inputKonfig.removeAttribute('required');
-  } else if (type === 'vpn') {
-    inputHP.style.display = 'none';
-    inputHP.removeAttribute('required');
-    inputKonfig.style.display = 'block';
-    inputKonfig.setAttribute('required', 'required');
-  } else {
-    inputHP.style.display = 'none';
-    inputHP.removeAttribute('required');
-    inputKonfig.style.display = 'none';
-    inputKonfig.removeAttribute('required');
-  }
-}
+    function orderWA(produk, device, durasi, harga) {
+        let text = `Halo Admin, saya mau order *${produk}*:\n\n• Limit Device: ${device}\n• Masa Aktif: ${durasi}\n• Total Harga: ${harga}\n• Protokol Pilihan: [ SSH / VMESS / VLESS / TROJAN ]\n\nMohon diproses, terima kasih!`;
+        window.open(`https://wa.me/${adminWA}?text=${encodeURIComponent(text)}`, '_blank');
+    }
 
-// UPDATE PREVIEW REAL-TIME
-function updatePreview() {
-  var user = document.getElementById('username').value || "[User (TKP)]";
-  var layananSelect = document.getElementById('layanan');
-  var layanan = layananSelect.value || "[Belum dipilih]";
-  var selectedOption = layananSelect.options[layananSelect.selectedIndex];
-  var type = selectedOption ? selectedOption.getAttribute('data-type') : '';
+    function orderSSH(produk, limit, durasi, harga) {
+        let text = `Halo Admin, saya mau order *SSH Cloudfront*:\n\n• Server: ${produk}\n• Limit IP: ${limit}\n• Masa Aktif: ${durasi}\n• Total Harga: ${harga}\n\nMohon diproses, terima kasih!`;
+        window.open(`https://wa.me/${adminWA}?text=${encodeURIComponent(text)}`, '_blank');
+    }
 
-  var nomorHP = document.getElementById('nomorHP').value || "[Belum diisi]";
-  var konfig = document.getElementById('konfig').value || "[Belum diisi]";
+    function orderInject(namaPaket, tipe, harga) {
+        let text = `Halo Admin, saya mau order *Inject Kuota*:\n\n• Produk: ${namaPaket}\n• Tipe: ${tipe}\n• Harga: ${harga}\n• No HP: \n\nMohon diproses, terima kasih!`;
+        window.open(`https://wa.me/${adminWA}?text=${encodeURIComponent(text)}`, '_blank');
+    }
 
-  var text = "Halo Admin Cikuya Store, saya mau order:\n" +
-             "• Nama & TKP: " + user + "\n" +
-             "• Pilihan Paket: " + layanan;
+    function orderGeneral() {
+        let text = `Halo Admin Cikuya Digital Store, saya mau order layanan VPN / SSH / Kuota. Mohon dibantu ya!`;
+        window.open(`https://wa.me/${adminWA}?text=${encodeURIComponent(text)}`, '_blank');
+    }
 
-  if (type === 'xl') {
-    text += "\n• No. HP XL: " + nomorHP;
-  } else if (type === 'vpn') {
-    text += "\n• Isi Konfig: " + konfig;
-  }
+    // SCRIPT MUSIC PLAYER (PLAYLIST MUSIK 1-3)
+    const playlist = [
+      {src: "musik1.mp3", judul: "🎵 Cyber Lo-fi"},
+      {src: "musik2.mp3", judul: "🎵 Night Drive"},
+      {src: "musik3.mp3", judul: "🎵 Digital Dream"}
+    ];
+    let currentLagu = 0;
+    let music = document.getElementById('bgm');
+    let judulEl = document.getElementById('judulLagu');
 
-  text += "\n\nMohon diproses, terima kasih!";
-             
-  document.getElementById('previewText').innerText = text;
-}
+    function loadLagu(){
+      music.src = playlist[currentLagu].src; 
+      judulEl.innerText = playlist[currentLagu].judul; 
+      music.volume = 0.3; 
+    }
+    function toggleMusic(){
+      if(music.paused){ music.play(); } else { music.pause(); }
+    }
+    function nextLagu(){ currentLagu = (currentLagu + 1) % playlist.length; loadLagu(); music.play(); }
+    function prevLagu(){ currentLagu = (currentLagu - 1 + playlist.length) % playlist.length; loadLagu(); music.play(); }
 
-// SCRIPT ORDER WHATSAPP
-document.getElementById('orderForm').onsubmit = function(e) {
-  e.preventDefault();
-  var user = document.getElementById('username').value;
-  var layananSelect = document.getElementById('layanan');
-  var layanan = layananSelect.value;
-  var selectedOption = layananSelect.options[layananSelect.selectedIndex];
-  var type = selectedOption ? selectedOption.getAttribute('data-type') : '';
-  
-  var nomorHP = document.getElementById('nomorHP').value;
-  var konfig = document.getElementById('konfig').value;
-  var nomorAdmin = "6283845286102";
+    music.addEventListener('ended', nextLagu); 
+    loadLagu();
 
-  var pesan = "Halo Admin Cikuya Store, saya mau order:%0A%0A" +
-              "• Nama & TKP: " + encodeURIComponent(user) + "%0A" +
-              "• Pilihan Paket: " + encodeURIComponent(layanan);
-
-  if (type === 'xl') {
-    pesan += "%0A• No. HP XL: " + encodeURIComponent(nomorHP);
-  } else if (type === 'vpn') {
-    pesan += "%0A• Isi Konfig: " + encodeURIComponent(konfig);
-  }
-
-  pesan += "%0A%0AMohon diproses, terima kasih!";
-  
-  window.open("https://wa.me/" + nomorAdmin + "?text=" + pesan, '_blank');
-};
-
-// SCRIPT MUSIC PLAYER (PLAYLIST MUSIK 1-3)
-const playlist = [
-  {src: "musik1.mp3", judul: "🎵 Cyber Lo-fi"},
-  {src: "musik2.mp3", judul: "🎵 Night Drive"},
-  {src: "musik3.mp3", judul: "🎵 Digital Dream"}
-];
-let currentLagu = 0;
-let music = document.getElementById('bgm');
-let judulEl = document.getElementById('judulLagu');
-
-function loadLagu(){
-  music.src = playlist[currentLagu].src; 
-  judulEl.innerText = playlist[currentLagu].judul; 
-  music.volume = 0.3; 
-}
-function toggleMusic(){
-  if(music.paused){ music.play(); } else { music.pause(); }
-}
-function nextLagu(){ currentLagu = (currentLagu + 1) % playlist.length; loadLagu(); music.play(); }
-function prevLagu(){ currentLagu = (currentLagu - 1 + playlist.length) % playlist.length; loadLagu(); music.play(); }
-
-music.addEventListener('ended', nextLagu); 
-loadLagu();
-
-// MODAL QRIS
-function openModal() { document.getElementById('qrisModal').style.display = 'flex'; }
-function closeModal() { document.getElementById('qrisModal').style.display = 'none'; }
+    // MODAL QRIS
+    function openModal() { document.getElementById('qrisModal').style.display = 'flex'; }
+    function closeModal() { document.getElementById('qrisModal').style.display = 'none'; }
 </script>
 
 </body>
