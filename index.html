@@ -135,7 +135,7 @@
         .contact-btn.group i { color: #a855f7; }
         .contact-btn.status i { color: #f59e0b; }
 
-        /* SWITCHER MENU UTAMA (ORDER vs GRATISAN) */
+        /* SWITCHER MENU UTAMA */
         .main-mode-switcher {
             display: flex;
             gap: 8px;
@@ -498,7 +498,7 @@
             <i class="fas fa-shopping-cart"></i> Order Premium
         </button>
         <button class="mode-btn" id="btn-mode-free" onclick="switchMainView('view-free', 'btn-mode-free')">
-            <i class="fas fa-gift"></i> Ambil Config & SSH Gratis
+            <i class="fas fa-gift"></i> Config & SSH Gratis
         </button>
     </div>
 
@@ -558,269 +558,155 @@
                         <div class="price-duration">22 Hari</div><div class="price-val">Rp 6.000</div>
                     </div>
                     <div onclick="orderWA('VPN Cloudflare (Indonesia)', '2 Device', '30 Hari', 'Rp 8.000')" class="price-item">
-                        <div class="price-duration">30 Hari</div><div clasline-height: 1.4;
-        }
-
-        .cta-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            padding: 12px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-            color: #fff;
-            font-weight: 700;
-            font-size: 0.88rem;
-            text-decoration: none;
-            margin-top: 12px;
-            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
-            cursor: pointer;
-        }
-
-        .qris-btn {
-            background: linear-gradient(135deg, #ff0041, #a8002b);
-            box-shadow: 0 4px 15px rgba(255, 0, 65, 0.3);
-            margin-top: 8px;
-        }
-
-        /* MODAL QRIS */
-        .modal {
-            display: none; position: fixed; z-index: 9999;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.85);
-            justify-content: center; align-items: center;
-        }
-        .modal-content {
-            background: rgba(11, 21, 40, 0.95); border: 2px solid #ff0041;
-            padding: 20px; border-radius: 16px; text-align: center;
-            max-width: 300px; width: 90%;
-            box-shadow: 0 0 25px rgba(255,0,65,0.6);
-        }
-        .modal-content img { width: 200px; height: 200px; border-radius: 8px; border: 1px solid #ff0041; margin: 10px 0; }
-        .close-btn {
-            background: #ff0041; border: none; color: #fff;
-            padding: 6px 15px; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 5px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 14px 0 6px 0;
-            font-size: 0.68rem;
-            color: var(--text-muted);
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-
-    <header>
-        <h1>⭐️ CIKUYA DIGITAL STORE</h1>
-        <p class="subtitle">Proses Cepat • QRIS Ready • Server Premium</p>
-
-        <!-- MUSIC PLAYER INLINE -->
-        <div class="music-box">
-            <div class="music-info" id="judulLagu">🎵 Cyber Lo-fi</div>
-            <div class="music-controls">
-                <button onclick="prevLagu()">⏮</button>
-                <button onclick="toggleMusic()">🔊</button>
-                <button onclick="nextLagu()">⏭</button>
+                        <div class="price-duration">30 Hari</div><div class="price-val">Rp 8.000</div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <audio id="bgm" loop></audio>
-        
-        <div class="header-info-list">
-            <div class="header-info-item">✅ Cocok user & reseller</div>
-            <div class="header-info-item">✅ Bisa Hubungi Admin di bawah ini:</div>
-        </div>
 
-        <div class="contact-bar">
-            <a href="https://wa.me/6283845286102" class="contact-btn wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="https://t.me/Layy_Qohhar" class="contact-btn tele" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
-            <a href="https://chat.whatsapp.com/BmMe81cA7GLCrRnbSGNJgv?s=cl&p=a&ilr=1" class="contact-btn group" target="_blank"><i class="fas fa-users"></i> WA Group</a>
-            <a href="https://status.rajaserver.web.id/" class="contact-btn status" target="_blank"><i class="fas fa-server"></i> Server Status</a>
-        </div>
-    </header>
-
-    <div class="instruction-box">
-        💡 <b>Cara Order Cepat:</b> Klik pada harga/paket yang kamu pilih, lalu kirim pesan otomatis ke WhatsApp.
-    </div>
-
-    <div class="category-nav">
-        <button class="tab-btn active" onclick="openTab(event, 'vpn-cf')"><i class="fas fa-shield-alt"></i> VPN Cloudflare</button>
-        <button class="tab-btn" onclick="openTab(event, 'ssh-cf')"><i class="fas fa-bolt"></i> SSH Cloudfront</button>
-        <button class="tab-btn" onclick="openTab(event, 'inject-data')"><i class="fas fa-wifi"></i> Inject Kuota</button>
-        <button class="tab-btn" onclick="openTab(event, 'fitur')"><i class="fas fa-star"></i> Info Server</button>
-    </div>
-
-    <div id="vpn-cf" class="tab-content active">
-        <div class="section-banner">
-            <h2>💎 VPN PREMIUM CLOUDFLARE</h2>
-            <p>Akun VPN – SSH • VMESS • VLESS • TROJAN<br>(Akun Only / Tanpa Config)</p>
-        </div>
-
-        <div class="card">
-            <div class="card-title"><span>🇮🇩 INDONESIA (MAX 1 DEVICE)</span></div>
-            <div class="price-grid">
-                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '1 Device', '3 Hari', 'Rp 1.000')" class="price-item">
-                    <div class="price-duration">3 Hari</div><div class="price-val">Rp 1.000</div>
-                </a>
-                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '1 Device', '7 Hari', 'Rp 1.500')" class="price-item">
-                    <div class="price-duration">7 Hari</div><div class="price-val">Rp 1.500</div>
-                </a>
-                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '1 Device', '15 Hari', 'Rp 3.000')" class="price-item">
-                    <div class="price-duration">15 Hari</div><div class="price-val">Rp 3.000</div>
-                </a>
-                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '1 Device', '22 Hari', 'Rp 4.500')" class="price-item">
-                    <div class="price-duration">22 Hari</div><div class="price-val">Rp 4.500</div>
-                </a>
-                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '1 Device', '30 Hari', 'Rp 6.000')" class="price-item">
-                    <div class="price-duration">30 Hari</div><div class="price-val">Rp 6.000</div>
-                </a>
+            <div class="card">
+                <div class="card-title"><span>🇮🇩 INDONESIA (MAX 5 DEVICE)</span></div>
+                <div class="price-grid">
+                    <div onclick="orderWA('VPN Cloudflare (Indonesia)', '5 Device', '3 Hari', 'Rp 2.000')" class="price-item">
+                        <div class="price-duration">3 Hari</div><div class="price-val">Rp 2.000</div>
+                    </div>
+                    <div onclick="orderWA('VPN Cloudflare (Indonesia)', '5 Device', '7 Hari', 'Rp 3.500')" class="price-item">
+                        <div class="price-duration">7 Hari</div><div class="price-val">Rp 3.500</div>
+                    </div>
+                    <div onclick="orderWA('VPN Cloudflare (Indonesia)', '5 Device', '15 Hari', 'Rp 5.000')" class="price-item">
+                        <div class="price-duration">15 Hari</div><div class="price-val">Rp 5.000</div>
+                    </div>
+                    <div onclick="orderWA('VPN Cloudflare (Indonesia)', '5 Device', '22 Hari', 'Rp 7.000')" class="price-item">
+                        <div class="price-duration">22 Hari</div><div class="price-val">Rp 7.000</div>
+                    </div>
+                    <div onclick="orderWA('VPN Cloudflare (Indonesia)', '5 Device', '30 Hari', 'Rp 10.000')" class="price-item">
+                        <div class="price-duration">30 Hari</div><div class="price-val">Rp 10.000</div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="card">
-            <div class="card-title"><span>🇮🇩 INDONESIA (MAX 2 DEVICE)</span></div>
-            <div class="price-grid">
-                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '2 Device', '3 Hari', 'Rp 1.500')" class="price-item">
-                    <div class="price-duration">3 Hari</div><div class="price-val">Rp 1.500</div>
-                </a>
-                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '2 Device', '7 Hari', 'Rp 2.500')" class="price-item">
-                    <div class="price-duration">7 Hari</div><div class="price-val">Rp 2.500</div>
-                </a>
-                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '2 Device', '15 Hari', 'Rp 4.000')" class="price-item">
-                    <div class="price-duration">15 Hari</div><div class="price-val">Rp 4.000</div>
-                </a>
-                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '2 Device', '22 Hari', 'Rp 6.000')" class="price-item">
-                    <div class="price-duration">22 Hari</div><div class="price-val">Rp 6.000</div>
-                </a>
-                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '2 Device', '30 Hari', 'Rp 8.000')" class="price-item">
-                    <div class="price-duration">30 Hari</div><div class="price-val">Rp 8.000</div>
-                </a>
+        <div id="ssh-cf" class="tab-content">
+            <div class="card">
+                <div class="inject-item">
+                    <div class="inject-head">
+                        <span>Cloudfront Reguler (Biznet)</span>
+                        <span style="color: var(--green);">Unlimited</span>
+                    </div>
+                    <div class="inject-prices">
+                        <div onclick="orderSSH('Cloudfront Reguler (Biznet)', '3 Device', '30 Hari (1 Bulan)', 'Rp 11.000')" class="price-badge">
+                            Limit IP: <b>3 Device</b> | Harga: <b>Rp 11.000 / bln</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="inject-item">
+                    <div class="inject-head">
+                        <span>Cloudfront Premium (Media Antar Nusa)</span>
+                        <span style="color: var(--gold);">Stok 50</span>
+                    </div>
+                    <div class="inject-prices">
+                        <div onclick="orderSSH('Cloudfront Premium (Media Antar Nusa)', '3 Device', '30 Hari (1 Bulan)', 'Rp 13.000')" class="price-badge">
+                            Limit IP: <b>3 Device</b> | Harga: <b>Rp 13.000 / bln</b>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="card">
-            <div class="card-title"><span>🇮🇩 INDONESIA (MAX 5 DEVICE)</span></div>
-            <div class="price-grid">
-                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '5 Device', '3 Hari', 'Rp 2.000')" class="price-item">
-                    <div class="price-duration">3 Hari</div><div class="price-val">Rp 2.000</div>
-                </a>
-                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '5 Device', '7 Hari', 'Rp 3.500')" class="price-item">
-                    <div class="price-duration">7 Hari</div><div class="price-val">Rp 3.500</div>
-                </a>
-                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '5 Device', '15 Hari', 'Rp 5.000')" class="price-item">
-                    <div class="price-duration">15 Hari</div><div class="price-val">Rp 5.000</div>
-                </a>
-                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '5 Device', '22 Hari', 'Rp 7.000')" class="price-item">
-                    <div class="price-duration">22 Hari</div><div class="price-val">Rp 7.000</div>
-                </a>
-                <a href="javascript:void(0)" onclick="orderWA('VPN Cloudflare (Indonesia)', '5 Device', '30 Hari', 'Rp 10.000')" class="price-item">
-                    <div class="price-duration">30 Hari</div><div class="price-val">Rp 10.000</div>
-                </a>
+        <div id="inject-data" class="tab-content">
+            <div class="card">
+                <div class="inject-item" style="border-color: rgba(168, 85, 247, 0.4); background: rgba(168, 85, 247, 0.15);">
+                    <div class="inject-head">
+                        <span style="color: #c084fc;">🟣 AXIS WA 13GB (14 Hari) + VPN 30D</span>
+                        <span style="color: var(--green); font-size: 0.68rem;">HOT ITEM</span>
+                    </div>
+                    <div class="inject-prices">
+                        <div onclick="orderInject('AXIS WA 13GB (14 Hari) + VPN 30D', 'Paket + VPN', 'Rp 27.000')" class="price-badge">
+                            Paket + VPN: <b>Rp 27.000</b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inject-item">
+                    <div class="inject-head">
+                        <span>XL EDU 15GB (7 Hari)</span>
+                    </div>
+                    <div class="inject-prices">
+                        <div onclick="orderInject('XL EDU 15GB (7 Hari)', 'Data Only', 'Rp 12.000')" class="price-badge">
+                            Data Only: <b>Rp 12.000</b>
+                        </div>
+                        <div onclick="orderInject('XL EDU 15GB (7 Hari)', '+ VPN 7D', 'Rp 14.000')" class="price-badge">
+                            + VPN 7D: <b>Rp 14.000</b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inject-item">
+                    <div class="inject-head">
+                        <span>XL Conference 15GB (7 Hari)</span>
+                    </div>
+                    <div class="inject-prices">
+                        <div onclick="orderInject('XL Conference 15GB (7 Hari)', 'Data Only', 'Rp 15.000')" class="price-badge">
+                            Data Only: <b>Rp 15.000</b>
+                        </div>
+                        <div onclick="orderInject('XL Conference 15GB (7 Hari)', '+ VPN 7D', 'Rp 17.000')" class="price-badge">
+                            + VPN 7D: <b>Rp 17.000</b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inject-item">
+                    <div class="inject-head">
+                        <span>XL iFlix 14GB / 30GB (30 Hari)</span>
+                    </div>
+                    <div class="inject-prices">
+                        <div onclick="orderInject('XL iFlix 14GB / 30GB (30 Hari)', 'Data Only', 'Rp 17.000')" class="price-badge">
+                            Data Only: <b>Rp 17.000</b>
+                        </div>
+                        <div onclick="orderInject('XL iFlix 14GB / 30GB (30 Hari)', '+ VPN 30D', 'Rp 25.000')" class="price-badge">
+                            + VPN 30D: <b>Rp 25.000</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fitur" class="tab-content">
+            <div class="card">
+                <div class="card-title">Keunggulan Server</div>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
+                    <li><i class="fas fa-check"></i> Support STB OpenWRT</li>
+                    <li><i class="fas fa-check"></i> YouTube 4K Smooth</li>
+                    <li><i class="fas fa-check"></i> Server Tidak Error</li>
+                    <li><i class="fas fa-check"></i> Fast Speed Download</li>
+                    <li><i class="fas fa-check"></i> Anti Reconnect</li>
+                </ul>
             </div>
         </div>
     </div>
 
-    <div id="ssh-cf" class="tab-content">
-        <div class="card">
-            <div class="inject-item">
-                <div class="inject-head">
-                    <span>Cloudfront Reguler (Biznet)</span>
-                    <span style="color: var(--green);">Unlimited</span>
-                </div>
-                <div class="inject-prices">
-                    <a href="javascript:void(0)" onclick="orderSSH('Cloudfront Reguler (Biznet)', '3 Device', '30 Hari (1 Bulan)', 'Rp 11.000')" class="price-badge">
-                        Limit IP: <b>3 Device</b> | Harga: <b>Rp 11.000 / bln</b>
-                    </a>
-                </div>
-            </div>
-            <div class="inject-item">
-                <div class="inject-head">
-                    <span>Cloudfront Premium (Media Antar Nusa)</span>
-                    <span style="color: var(--gold);">Stok 50</span>
-                </div>
-                <div class="inject-prices">
-                    <a href="javascript:void(0)" onclick="orderSSH('Cloudfront Premium (Media Antar Nusa)', '3 Device', '30 Hari (1 Bulan)', 'Rp 13.000')" class="price-badge">
-                        Limit IP: <b>3 Device</b> | Harga: <b>Rp 13.000 / bln</b>
-                    </a>
-                </div>
-            </div>
+    <!-- TAMPILAN 2: GRATISAN (FREE CONFIG & SSH) -->
+    <div id="view-free" class="main-view">
+        <div class="instruction-box">
+            ⚡ <b>Unduh Gratis:</b> Silahkan ambil file config unlock atau akun SSH gratisan di bawah ini.
         </div>
-    </div>
 
-    <div id="inject-data" class="tab-content">
-        <div class="card">
-            <div class="inject-item" style="border-color: rgba(168, 85, 247, 0.4); background: rgba(168, 85, 247, 0.15);">
-                <div class="inject-head">
-                    <span style="color: #c084fc;">🟣 AXIS WA 13GB (14 Hari) + VPN 30D</span>
-                    <span style="color: var(--green); font-size: 0.68rem;">HOT ITEM</span>
-                </div>
-                <div class="inject-prices">
-                    <a href="javascript:void(0)" onclick="orderInject('AXIS WA 13GB (14 Hari) + VPN 30D', 'Paket + VPN', 'Rp 27.000')" class="price-badge">
-                        Paket + VPN: <b>Rp 27.000</b>
-                    </a>
-                </div>
-            </div>
-
-            <div class="inject-item">
-                <div class="inject-head">
-                    <span>XL EDU 15GB (7 Hari)</span>
-                </div>
-                <div class="inject-prices">
-                    <a href="javascript:void(0)" onclick="orderInject('XL EDU 15GB (7 Hari)', 'Data Only', 'Rp 12.000')" class="price-badge">
-                        Data Only: <b>Rp 12.000</b>
-                    </a>
-                    <a href="javascript:void(0)" onclick="orderInject('XL EDU 15GB (7 Hari)', '+ VPN 7D', 'Rp 14.000')" class="price-badge">
-                        + VPN 7D: <b>Rp 14.000</b>
-                    </a>
-                </div>
-            </div>
-
-            <div class="inject-item">
-                <div class="inject-head">
-                    <span>XL Conference 15GB (7 Hari)</span>
-                </div>
-                <div class="inject-prices">
-                    <a href="javascript:void(0)" onclick="orderInject('XL Conference 15GB (7 Hari)', 'Data Only', 'Rp 15.000')" class="price-badge">
-                        Data Only: <b>Rp 15.000</b>
-                    </a>
-                    <a href="javascript:void(0)" onclick="orderInject('XL Conference 15GB (7 Hari)', '+ VPN 7D', 'Rp 17.000')" class="price-badge">
-                        + VPN 7D: <b>Rp 17.000</b>
-                    </a>
-                </div>
-            </div>
-
-            <div class="inject-item">
-                <div class="inject-head">
-                    <span>XL iFlix 14GB / 30GB (30 Hari)</span>
-                </div>
-                <div class="inject-prices">
-                    <a href="javascript:void(0)" onclick="orderInject('XL iFlix 14GB / 30GB (30 Hari)', 'Data Only', 'Rp 17.000')" class="price-badge">
-                        Data Only: <b>Rp 17.000</b>
-                    </a>
-                    <a href="javascript:void(0)" onclick="orderInject('XL iFlix 14GB / 30GB (30 Hari)', '+ VPN 30D', 'Rp 25.000')" class="price-badge">
-                        + VPN 30D: <b>Rp 25.000</b>
-                    </a>
-                </div>
-            </div>
+        <div class="free-card featured">
+            <div class="free-badge">RECOMMENDED</div>
+            <h3>File Config Unlock All</h3>
+            <p>File config format ZIP yang sudah siap pakai, kamu tinggal meng-export dan memasukkan akun SSH sendiri.</p>
+            <a href="https://sfile.co/jFyfGeBqORn" class="btn-download-free" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-download"></i> Download Config Unlock All
+            </a>
         </div>
-    </div>
 
-    <div id="fitur" class="tab-content">
-        <div class="card">
-            <div class="card-title">Keunggulan Server</div>
-            <ul class="feature-list">
-                <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
-                <li><i class="fas fa-check"></i> Support STB OpenWRT</li>
-                <li><i class="fas fa-check"></i> YouTube 4K Smooth</li>
-                <li><i class="fas fa-check"></i> Server Tidak Error</li>
-                <li><i class="fas fa-check"></i> Fast Speed Download</li>
-                <li><i class="fas fa-check"></i> Anti Reconnect</li>
-            </ul>
+        <div class="free-card">
+            <div class="free-badge">FREE SERVER</div>
+            <h3>Akun SSH Gratisan</h3>
+            <p>Detail/akun SSH aktif gratisan yang bisa langsung kamu gunakan untuk diisikan ke config unlock.</p>
+            <a href="https://sfile.co/FVzYPz8yseV" class="btn-download-free secondary" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-key"></i> Ambil SSH Gratis
+            </a>
         </div>
     </div>
 
@@ -851,6 +737,19 @@
 <script>
     const adminWA = "6283845286102";
 
+    // FUNGSI SWITCHER VIEW (ORDER VS GRATISAN)
+    function switchMainView(viewId, btnId) {
+        const views = document.querySelectorAll('.main-view');
+        const modeBtns = document.querySelectorAll('.mode-btn');
+
+        views.forEach(v => v.classList.remove('active'));
+        modeBtns.forEach(b => b.classList.remove('active'));
+
+        document.getElementById(viewId).classList.add('active');
+        document.getElementById(btnId).classList.add('active');
+    }
+
+    // FUNGSI TAB KATALOG
     function openTab(evt, tabName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tab-content");
@@ -861,6 +760,7 @@
         evt.currentTarget.classList.add("active");
     }
 
+    // FUNGSI PESAN OTOMATIS WHATSAPP
     function orderWA(produk, device, durasi, harga) {
         let text = `Halo Admin, saya mau order *${produk}*:\n\n• Limit Device: ${device}\n• Masa Aktif: ${durasi}\n• Total Harga: ${harga}\n• Protokol Pilihan: [ SSH / VMESS / VLESS / TROJAN ]\n\nMohon diproses, terima kasih!`;
         window.open(`https://wa.me/${adminWA}?text=${encodeURIComponent(text)}`, '_blank');
