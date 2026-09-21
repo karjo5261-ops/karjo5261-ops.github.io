@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>⭐️ CIKUYA DIGITAL STORE</title>
     
-    <!-- Meta Open Graph untuk Preview Link (Menggunakan cover.png) -->
+    <!-- Meta Open Graph untuk Preview Link -->
     <meta property="og:title" content="🇮🇩 CIKUYA DIGITAL STORE 🇮🇩">
     <meta property="og:description" content="FAST • TRUSTED • SECURE | VPN & TEMBAK PAKET">
     <meta property="og:image" content="cover.png">
@@ -74,7 +74,7 @@
             margin-bottom: 8px;
         }
 
-        /* MUSIC PLAYER */
+        /* MUSIC PLAYER INLINE */
         .music-box {
             background: rgba(15, 25, 45, 0.95);
             border: 1px solid var(--accent-cyan);
@@ -135,6 +135,38 @@
         .contact-btn.group i { color: #a855f7; }
         .contact-btn.status i { color: #f59e0b; }
 
+        /* SWITCHER MENU UTAMA (ORDER vs GRATISAN) */
+        .main-mode-switcher {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .mode-btn {
+            flex: 1;
+            padding: 12px 10px;
+            border-radius: 14px;
+            border: 1px solid var(--card-border);
+            background: var(--card-bg);
+            color: var(--text-muted);
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .mode-btn.active {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.35);
+        }
+
+        .main-view { display: none; }
+        .main-view.active { display: block; }
+
         .instruction-box {
             background: rgba(6, 182, 212, 0.12);
             border: 1px dashed rgba(6, 182, 212, 0.4);
@@ -147,6 +179,7 @@
             line-height: 1.4;
         }
 
+        /* KATALOG CATEGORY NAV */
         .category-nav {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -296,6 +329,7 @@
             text-decoration: none;
             transition: background 0.2s ease;
             display: inline-block;
+            cursor: pointer;
         }
 
         .price-badge:hover {
@@ -326,15 +360,205 @@
 
         .feature-list i { color: var(--green); }
 
-        .notice-box {
-            background: rgba(251, 191, 36, 0.12);
-            border: 1px solid rgba(251, 191, 36, 0.3);
-            border-radius: 12px;
-            padding: 10px 12px;
-            font-size: 0.72rem;
-            color: #fef3c7;
+        /* CARDS GRATISAN (FREE VIEW) */
+        .free-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 18px;
+            padding: 16px;
+            margin-bottom: 12px;
+            backdrop-filter: blur(12px);
+        }
+        .free-card.featured {
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+        }
+        .free-badge {
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .free-card h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .free-card p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .btn-download-free {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+        }
+        .btn-download-free.secondary {
+            background: linear-gradient(135deg, #10b981, #059669);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .cta-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
             margin-top: 12px;
-            line-height: 1.4;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            cursor: pointer;
+        }
+
+        .qris-btn {
+            background: linear-gradient(135deg, #ff0041, #a8002b);
+            box-shadow: 0 4px 15px rgba(255, 0, 65, 0.3);
+            margin-top: 8px;
+        }
+
+        /* MODAL QRIS */
+        .modal {
+            display: none; position: fixed; z-index: 9999;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            justify-content: center; align-items: center;
+        }
+        .modal-content {
+            background: rgba(11, 21, 40, 0.95); border: 2px solid #ff0041;
+            padding: 20px; border-radius: 16px; text-align: center;
+            max-width: 300px; width: 90%;
+            box-shadow: 0 0 25px rgba(255,0,65,0.6);
+        }
+        .modal-content img { width: 200px; height: 200px; border-radius: 8px; border: 1px solid #ff0041; margin: 10px 0; }
+        .close-btn {
+            background: #ff0041; border: none; color: #fff;
+            padding: 6px 15px; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 14px 0 6px 0;
+            font-size: 0.68rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>⭐️ CIKUYA DIGITAL STORE</h1>
+        <p class="subtitle">Proses Cepat • QRIS Ready • Server Premium</p>
+
+        <!-- MUSIC PLAYER INLINE -->
+        <div class="music-box">
+            <div class="music-info" id="judulLagu">🎵 Cyber Lo-fi</div>
+            <div class="music-controls">
+                <button onclick="prevLagu()">⏮</button>
+                <button onclick="toggleMusic()">🔊</button>
+                <button onclick="nextLagu()">⏭</button>
+            </div>
+        </div>
+        <audio id="bgm" loop></audio>
+        
+        <div class="header-info-list">
+            <div class="header-info-item">✅ Cocok user & reseller</div>
+            <div class="header-info-item">✅ Bisa Hubungi Admin di bawah ini:</div>
+        </div>
+
+        <div class="contact-bar">
+            <a href="https://wa.me/6283845286102" class="contact-btn wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://t.me/Layy_Qohhar" class="contact-btn tele" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+            <a href="https://chat.whatsapp.com/BmMe81cA7GLCrRnbSGNJgv?s=cl&p=a&ilr=1" class="contact-btn group" target="_blank"><i class="fas fa-users"></i> WA Group</a>
+            <a href="https://status.rajaserver.web.id/" class="contact-btn status" target="_blank"><i class="fas fa-server"></i> Server Status</a>
+        </div>
+    </header>
+
+    <!-- SWITCHER PILIHAN MENU UTAMA -->
+    <div class="main-mode-switcher">
+        <button class="mode-btn active" id="btn-mode-order" onclick="switchMainView('view-order', 'btn-mode-order')">
+            <i class="fas fa-shopping-cart"></i> Order Premium
+        </button>
+        <button class="mode-btn" id="btn-mode-free" onclick="switchMainView('view-free', 'btn-mode-free')">
+            <i class="fas fa-gift"></i> Ambil Config & SSH Gratis
+        </button>
+    </div>
+
+    <!-- TAMPILAN 1: ORDER KATALOG PREMIUM -->
+    <div id="view-order" class="main-view active">
+        <div class="instruction-box">
+            💡 <b>Cara Order Cepat:</b> Klik pada harga/paket yang kamu pilih, lalu kirim pesan otomatis ke WhatsApp.
+        </div>
+
+        <div class="category-nav">
+            <button class="tab-btn active" onclick="openTab(event, 'vpn-cf')"><i class="fas fa-shield-alt"></i> VPN Cloudflare</button>
+            <button class="tab-btn" onclick="openTab(event, 'ssh-cf')"><i class="fas fa-bolt"></i> SSH Cloudfront</button>
+            <button class="tab-btn" onclick="openTab(event, 'inject-data')"><i class="fas fa-wifi"></i> Inject Kuota</button>
+            <button class="tab-btn" onclick="openTab(event, 'fitur')"><i class="fas fa-star"></i> Info Server</button>
+        </div>
+
+        <div id="vpn-cf" class="tab-content active">
+            <div class="section-banner">
+                <h2>💎 VPN PREMIUM CLOUDFLARE</h2>
+                <p>Akun VPN – SSH • VMESS • VLESS • TROJAN<br>(Akun Only / Tanpa Config)</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span>🇮🇩 INDONESIA (MAX 1 DEVICE)</span></div>
+                <div class="price-grid">
+                    <div onclick="orderWA('VPN Cloudflare (Indonesia)', '1 Device', '3 Hari', 'Rp 1.000')" class="price-item">
+                        <div class="price-duration">3 Hari</div><div class="price-val">Rp 1.000</div>
+                    </div>
+                    <div onclick="orderWA('VPN Cloudflare (Indonesia)', '1 Device', '7 Hari', 'Rp 1.500')" class="price-item">
+                        <div class="price-duration">7 Hari</div><div class="price-val">Rp 1.500</div>
+                    </div>
+                    <div onclick="orderWA('VPN Cloudflare (Indonesia)', '1 Device', '15 Hari', 'Rp 3.000')" class="price-item">
+                        <div class="price-duration">15 Hari</div><div class="price-val">Rp 3.000</div>
+                    </div>
+                    <div onclick="orderWA('VPN Cloudflare (Indonesia)', '1 Device', '22 Hari', 'Rp 4.500')" class="price-item">
+                        <div class="price-duration">22 Hari</div><div class="price-val">Rp 4.500</div>
+                    </div>
+                    <div onclick="orderWA('VPN Cloudflare (Indonesia)', '1 Device', '30 Hari', 'Rp 6.000')" class="price-item">
+                        <div class="price-duration">30 Hari</div><div class="price-val">Rp 6.000</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><span>🇮🇩 INDONESIA (MAX 2 DEVICE)</span></div>
+                <div class="price-grid">
+                    <div onclick="orderWA('VPN Cloudflare (Indonesia)', '2 Device', '3 Hari', 'Rp 1.500')" class="price-item">
+                        <div class="price-duration">3 Hari</div><div class="price-val">Rp 1.500</div>
+                    </div>
+                    <div onclick="orderWA('VPN Cloudflare (Indonesia)', '2 Device', '7 Hari', 'Rp 2.500')" class="price-item">
+                        <div class="price-duration">7 Hari</div><div class="price-val">Rp 2.500</div>
+                    </div>
+                    <div onclick="orderWA('VPN Cloudflare (Indonesia)', '2 Device', '15 Hari', 'Rp 4.000')" class="price-item">
+                        <div class="price-duration">15 Hari</div><div class="price-val">Rp 4.000</div>
+                    </div>
+                    <div onclick="orderWA('VPN Cloudflare (Indonesia)', '2 Device', '22 Hari', 'Rp 6.000')" class="price-item">
+                        <div class="price-duration">22 Hari</div><div class="price-val">Rp 6.000</div>
+                    </div>
+                    <div onclick="orderWA('VPN Cloudflare (Indonesia)', '2 Device', '30 Hari', 'Rp 8.000')" class="price-item">
+                        <div class="price-duration">30 Hari</div><div clasline-height: 1.4;
         }
 
         .cta-btn {
