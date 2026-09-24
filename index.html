@@ -12,7 +12,7 @@ body{background:#05010a;color:#fff;font-family:'Rajdhani',sans-serif;min-height:
 .bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(120,0,255,.35),rgba(5,1,10,.95) 70%)}
 .grid{position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,0,80,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,0,80,.12) 1px, transparent 1px);background-size:40px 40px;animation:gridMove 8s linear infinite}
 @keyframes gridMove{0%{transform:perspective(500px) rotateX(20deg) translateY(0)}100%{transform:perspective(500px) rotateX(20deg) translateY(40px)}}
-.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(15px);display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid rgba(0,0,0,.08)}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(15px);display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-bottom:1px solid rgba(0,0,0,.08)}
 .hamburger{width:30px;cursor:pointer;display:flex;flex-direction:column;gap:6px}
 .hamburger span{height:3px;background:#475569;border-radius:10px;display:block}
 .icon-btn{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:18px;border:0;cursor:pointer;font-weight:700}
@@ -20,7 +20,8 @@ body{background:#05010a;color:#fff;font-family:'Rajdhani',sans-serif;min-height:
 .sidebar.open{left:0}
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:90;display:none}
 .overlay.show{display:block}
-.menu-logo{font-family:'Orbitron';font-size:20px;font-weight:900;margin-bottom:20px}
+.menu-logo{font-family:'Orbitron';font-size:20px;font-weight:900;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.menu-logo img{width:30px;height:30px;border-radius:6px;object-fit:cover}
 .menu-logo span{color:#00e5ff}
 .menu-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;text-decoration:none;color:#fff;opacity:.7;margin:6px 0;border:1px solid transparent;transition:.2s}
 .menu-item.active,.menu-item:hover{background:rgba(255,0,64,.15);border-color:#ff0040;opacity:1}
@@ -36,7 +37,7 @@ body{background:#05010a;color:#fff;font-family:'Rajdhani',sans-serif;min-height:
 .card h3{font-family:'Orbitron';font-size:13px;letter-spacing:1px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
 .live{font-family:'JetBrains Mono';font-size:9px;background:#00ff88;color:#000;padding:3px 7px;border-radius:4px;animation:blink 1s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
-.item{display:flex;align-items:center;gap:12px;padding:12px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.08);border-radius:12px;margin:10px 0;text-decoration:none;color:#fff;transition:.25s}
+.item{display:flex;align-items:center;gap:12px;padding:12px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.08);border-radius:12px;margin:6px 0;text-decoration:none;color:#fff;transition:.25s}
 .item:hover{border-color:#ff0040;box-shadow:0 0 25px rgba(255,0,64,.5);transform:translateX(4px)}
 .icon{width:44px;height:44px;border-radius:8px;display:grid;place-items:center;font-size:22px;flex-shrink:0}
 .i1{background:radial-gradient(circle at 30% 30%, #ff0040, #550014);box-shadow:0 0 15px #ff0040}
@@ -56,142 +57,152 @@ body{background:#05010a;color:#fff;font-family:'Rajdhani',sans-serif;min-height:
 .arab-bismillah{font-family:'Scheherazade New',serif;font-size:32px;text-align:center;color:#00e5ff;text-shadow:0 0 20px #00e5ff;margin:8px 0 14px 0;direction:rtl;font-weight:700}
 .arab-closing{font-family:'Scheherazade New',serif;font-size:24px;text-align:right;color:#a5f3fc;direction:rtl;line-height:1.6;margin-top:8px}
 .divider{height:1px;background:linear-gradient(90deg,transparent,#ff0040,transparent);margin:16px 0}
+.cover-hero{width:100%;height:140px;border-radius:12px;object-fit:cover;border:1px solid rgba(255,0,64,.3);margin:12px 0;box-shadow:0 0 25px rgba(255,0,64,.3)}
+.qris-donasi{width:100%;max-width:140px;background:#fff;padding:6px;border-radius:10px;margin:8px auto;display:block;box-shadow:0 0 20px rgba(255,0,64,.3)}
+.num{width:22px;height:22px;background:#ff0040;color:#fff;border-radius:4px;display:grid;place-items:center;font-family:JetBrains Mono;font-size:10px;font-weight:700;flex-shrink:0}
 </style>
 </head>
 <body>
 <div class="bg"></div><div class="grid"></div>
-
 <div class="topbar">
   <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   <div style="display:flex;gap:10px;align-items:center">
+    <img src="bg-logo.png" style="width:28px;height:28px;border-radius:6px;" onerror="this.style.display='none'">
     <div id="musicTitle" style="font-family:JetBrains Mono;font-size:10px;color:#475569;margin-right:6px">♪ Cyber Lo-fi</div>
     <button class="icon-btn" id="topPlayBtn" onclick="toggleMusic()" style="background:#0a0a1a;color:#fff">▶</button>
     <button class="icon-btn" onclick="nextMusic()" style="background:#f1f5f9;color:#475569">⏭</button>
   </div>
 </div>
-
-<div id="successWrap" style="display:none"></div>
 <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 <div class="sidebar" id="sidebar">
-  <div class="menu-logo">CIKUYA DIGITAL <span>STORE</span></div>
+  <div class="menu-logo"><img src="bg-logo.png" onerror="this.src='https://via.placeholder.com/30'">CIKUYA DIGITAL <span>STORE</span></div>
   <div style="font-family:JetBrains Mono;font-size:10px;opacity:.4;letter-spacing:2px;margin-bottom:10px">MENU TUNNELING BERKAH</div>
   <a href="#" class="menu-item active" onclick="go('dashboard')">📖 Mukoddimah</a>
-  <a href="#" class="menu-item" onclick="go('config')">📁 Ambil Config</a>
+  <a href="#" class="menu-item" onclick="go('config')">📁 Ambil Config (29)</a>
   <a href="#" class="menu-item" onclick="go('ssh')">🚀 SSH Gratis</a>
   <a href="#" class="menu-item" onclick="go('apk')">📱 APK Premium</a>
-  <a href="#" class="menu-item" onclick="go('qris')">💸 QRIS Support</a>
+  <a href="#" class="menu-item" onclick="go('qris')">💸 QRIS Donasi</a>
   <a href="https://wa.me/6283845286102" class="menu-item">💬 Konsultasi WA</a>
 </div>
-
-<div class="wrap" id="wrap">
+<div class="wrap">
   <div style="text-align:center;padding:10px 0">
-    <div class="badge-top">CIKUYA DIGITAL STORE</div>
+    <div class="badge-top">JUM'AT BERKAH • 29 CONFIG PREMIUM FREE</div>
     <div class="glitch">DUNIA <span>TUNNELING</span></div>
     <div class="terminal" id="terminal"></div>
   </div>
-
   <div id="dashboard" class="section active">
     <div class="card" style="padding:14px;">
       <div style="display:flex;justify-content:space-between;align-items:center">
-        <div><div style="font-family:Orbitron;font-size:10px;opacity:.6">WAKTU WIB - DKI JAKARTA (MUI & NU)</div><div id="jam" style="font-family:Orbitron;font-size:26px;font-weight:900;text-shadow:0 0 15px #00e5ff">00:00:00</div><div id="tanggal" style="font-family:JetBrains Mono;font-size:9px;opacity:.6"></div></div>
+        <div><div style="font-family:Orbitron;font-size:10px;opacity:.6">WAKTU WIB - DKI JAKARTA</div><div id="jam" style="font-family:Orbitron;font-size:26px;font-weight:900;text-shadow:0 0 15px #00e5ff">00:00:00</div><div id="tanggal" style="font-family:JetBrains Mono;font-size:9px;opacity:.6"></div></div>
         <div style="text-align:right"><div id="nextSholat" style="font-family:JetBrains Mono;font-size:9px;background:#ff0040;padding:4px 8px;border-radius:4px">LOADING...</div><div style="font-size:8px;opacity:.8;margin-top:6px;font-family:JetBrains Mono">📍 KEMENAG RI • NU</div></div>
       </div>
       <div id="jadwal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px"></div>
-      <div style="font-family:JetBrains Mono;font-size:8px;opacity:.4;text-align:center;margin-top:10px">Metode: Kementerian Agama RI (MUI) • Madzhab: Syafi'i (NU) • Jakarta</div>
     </div>
-
     <div class="card mukoddimah">
-      <!-- SALAM 1 ARABIC -->
+      <img src="cover.png" class="cover-hero" onerror="this.style.display='none'">
       <div class="arab-salam">السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</div>
-      <!-- BISMILLAH ARABIC DI BAWAH SALAM 1 -->
       <div class="arab-bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
-
       <h3 style="justify-content:center;font-size:15px">📖 MUKODDIMAH - DUNIA TUNNELING</h3>
       <div class="divider"></div>
-
-      <p>Alhamdulillah, segala puji bagi Allah SWT yang telah memberikan kita nikmat iman, nikmat sehat, dan nikmat koneksi di era digital ini.</p><br>
-      <p>Website <b>Cikuya Digital Store - Dunia Tunneling</b> ini kami dirikan bukan sekadar untuk berbagi <b>SSH, VPN, dan Config Gratis</b>, melainkan sebagai ladang amal kecil di dunia tunneling.</p><br>
-      <p><b>Tujuan Kami di Dunia Tunneling:</b><br>
-      1. <b>Memudahkan Akses:</b> Membantu teman-teman pelajar, perantau, dan pejuang kuota agar tetap bisa belajar, bekerja, dan bersilaturahmi.<br>
-      2. <b>Gratis Tanpa Syarat:</b> Semua tools tunneling disini <b>100% gratis tanpa login, tanpa iklan menyesatkan</b>.<br>
-      3. <b>Tunneling Berkah:</b> Semoga setiap byte kuota yang hemat menjadi saksi kebaikan kita.</p><br>
+      <p>Alhamdulillah, website <b>Cikuya Digital Store</b> ini kami dirikan sebagai ladang amal di dunia tunneling. Semua <b>SSH, APK, Config Gratis</b> update Berkah.</p>
+      <p style="margin-top:10px"><b>Tujuan:</b> Memudahkan pelajar & pejuang kuota, 100% gratis tanpa login.</p>
       <div class="divider"></div>
-      <p style="text-align:center;font-style:italic;opacity:.8">"Sebaik-baik manusia adalah yang paling bermanfaat bagi manusia lainnya."<br>(HR. Ahmad)</p><br>
-
-      <!-- SALAM 2 PENUTUP JUGA ARABIC -->
+      <p style="text-align:center;font-style:italic;opacity:.8">"Sebaik-baik manusia adalah yang paling bermanfaat." (HR. Ahmad)</p>
       <div class="arab-closing">وَالسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</div>
-      <p style="text-align:right;font-size:13px;margin-top:4px">— <span style="color:#00e5ff">Tim Cikuya Digital - Store</span></p>
+      <p style="text-align:right;font-size:13px;margin-top:4px">— <span style="color:#00e5ff">Admin t.me/Layy_Qohhar</span></p>
     </div>
+    <a href="https://wa.me/6283845286102?text=Halo%20Bang%20Aku%20Mau%20Donasi" class="btn btn-wa">💬 KONSULTASI VIA WHATSAPP</a>
+    <a href="https://chat.whatsapp.com/BmMe81cA7GLCrRnbSGNJgv" class="btn btn-grup">👥 GABUNG GRUP TUNNELING →</a>
+  </div>
 
+  <div id="config" class="section">
     <div class="card">
-      <h3>⚡ DOWNLOAD CENTER <span class="live">● LIVE NOW</span></h3>
-      <a href="https://sfile.co/fVQLqyzlELm" class="item"><div class="icon i1">🚀</div><div><b>AKUN SSH GRATIS DUNIA TUNNELING</b><br><small style="opacity:.6;font-family:JetBrains Mono">SG & ID • BEBAS IP • UPDATE HARIAN</small></div></a>
-      <a href="https://https://sfile.co/a5Ii1QAhZLn" class="item"><div class="icon i2">📱</div><div><b>HTTP CUSTOM LAMA</b><br><small style="opacity:.6;font-family:JetBrains Mono">MOD PREMIUM • STABIL OLD • NO FC</small></div></a>
-      <a href="https://https://sfile.co/PWRmwg5RDRL" class="item"><div class="icon i3">🔓</div><div><b>ZIVPN PRO UNLOCK ALL</b><br><small style="opacity:.6;font-family:JetBrains Mono">PREMIUM UNLOCKED • NO ADS • VIP</small></div></a>
-      <a href="https://https://sfile.co/uuFGeUn99AR" class="item"><div class="icon i4">🕶️</div><div><b>DARKTUNNEL MOD PREMIUM</b><br><small style="opacity:.6;font-family:JetBrains Mono">TANPA IKLAN • FAST CONNECT • VIP</small></div></a>
-      <a href="https://https://sfile.co/jFyfGeBqORn" class="item"><div class="icon i5">⚙️</div><div><b>CONFIG HC TUNNELING UNLOCK</b><br><small style="opacity:.6;font-family:JetBrains Mono">ALL OPERATOR • STABIL • NO FC</small></div></a>
+      <h3>📁 CONFIG PREMIUM - URUTAN BARU <span class="live">29 FILE</span></h3>
+      <div style="font-family:JetBrains Mono;font-size:10px;opacity:.6;margin-bottom:14px;line-height:1.6;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:10px">
+        BY: CIKUYA DIGITAL STORE♛<br>URUTAN SESUAI REQUEST • NO ACAK<br>WAJIB: HTTP CUSTOM OLD • EXPIRED: LIFETIME
+      </div>
+
+      <!-- LIST URUTAN CONFIG 1-29 -->
+      <a href="https://sfile.co/TAWl02fmK6I" class="item"><div class="num">1</div><div class="icon i2" style="width:32px;height:32px">📄</div><div><b>Telkomsel ilped Cloudfront Premium</b></div></a>
+      <a href="https://sfile.co/AgboBgwrWU" class="item"><div class="num">2</div><div class="icon i2" style="width:32px;height:32px">📄</div><div><b>Telkomsel ilped premium</b></div></a>
+      <a href="https://sfile.co/a07NAa5V7Iy" class="item"><div class="num">3</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>OPOK AXIS PREMIUM</b></div></a>
+      <a href="https://sfile.co/NQtCBni7MWj" class="item"><div class="num">4</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>XL IFLIX BANTEN JABAR</b></div></a>
+      <a href="https://sfile.co/lJn8yTAPDBw" class="item"><div class="num">5</div><div class="icon i2" style="width:32px;height:32px">📄</div><div><b>Telkomsel ilped jakarta Prem</b></div></a>
+      <a href="https://sfile.co/CIfXaZJlaqL" class="item"><div class="num">6</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>XL OPOK PREMIUM</b></div></a>
+      <a href="https://sfile.co/EQ4suR989mZ" class="item"><div class="num">7</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>EDUKASI XL JABAR-JKT-LOMBOK SUMATRA</b></div></a>
+      <a href="https://sfile.co/vwyO1soUCPB" class="item"><div class="num">8</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>XL PREMIUM CONFERENCE</b></div></a>
+      <a href="https://sfile.co/eKxi8L4WlUY" class="item"><div class="num">9</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>AXIS WHATSAPP NON JBR V2</b></div></a>
+      <a href="https://sfile.co/6OsWoYP75rf" class="item"><div class="num">10</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>Axis WhatsApp v1</b></div></a>
+      <a href="https://sfile.co/NvtcX9fzTVk" class="item"><div class="num">11</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>AXIS WHATSAPP PREMIUM V2</b></div></a>
+      <a href="https://sfile.co/2JsOxFcZM0Q" class="item"><div class="num">12</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>AXIS BOOSTER VIDEO PREMIUM & SUSHIROLL</b></div></a>
+      <a href="https://sfile.co/rFTsakFZlkU" class="item"><div class="num">13</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>XL AXIS SPOTIFY PREMIUM</b></div></a>
+      <a href="https://sfile.co/6fICM44sSVc" class="item"><div class="num">14</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>AXIS SHUSIROLL VIDEO PREMIUM</b></div></a>
+      <a href="https://sfile.co/JvCqciE0BaY" class="item"><div class="num">15</div><div class="icon i5" style="width:32px;height:32px">🌐</div><div><b>All opok premium</b></div></a>
+      <a href="https://sfile.co/PwUDvBTBGC0" class="item"><div class="num">16</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>XL CONFERENCE PREMIUM</b></div></a>
+      <a href="https://sfile.co/ZDRSM9hISUz" class="item"><div class="num">17</div><div class="icon i2" style="width:32px;height:32px">📄</div><div><b>Telkomsel OPOK</b></div></a>
+      <a href="https://sfile.co/cVeylhRYpvI" class="item"><div class="num">18</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>AXIS XL FF</b></div></a>
+      <a href="https://sfile.co/kCHSb0t41Eu" class="item"><div class="num">19</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>Axis game premium</b></div></a>
+      <a href="https://sfile.co/T4C8FAvW5UL" class="item"><div class="num">20</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>XL BIZ UNLIMITED</b></div></a>
+      <a href="https://sfile.co/fI7a41mXMkI" class="item"><div class="num">21</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>XL EDUKASI JATENG JATIM</b></div></a>
+      <a href="https://sfile.co/Hacd3mPrQKw" class="item"><div class="num">22</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>Axis WhatsApp non Jabar</b></div></a>
+      <a href="https://sfile.co/yjR2lIXviqF" class="item"><div class="num">23</div><div class="icon i2" style="width:32px;height:32px">📄</div><div><b>opok Telkomsel Cloudfront</b></div></a>
+      <a href="https://sfile.co/gMkPFKk2PNp" class="item"><div class="num">24</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>Axis WhatsApp Jateng Jatim</b></div></a>
+      <a href="https://sfile.co/ls5SbUPVToc" class="item"><div class="num">25</div><div class="icon i3" style="width:32px;height:32px">📄</div><div><b>Tri sosmed premium</b></div></a>
+      <a href="https://sfile.co/YFa20ZNDqBX" class="item"><div class="num">26</div><div class="icon i4" style="width:32px;height:32px">📄</div><div><b>ISAT APPSFUN - Indosat IM3</b></div></a>
+      <a href="https://sfile.co/jBeuxP4r6sc" class="item"><div class="num">27</div><div class="icon i4" style="width:32px;height:32px">📄</div><div><b>ISAT SOSMED premium - Indosat IM3</b></div></a>
+      <a href="https://sfile.co/0NVWOOrDaGU" class="item"><div class="num">28</div><div class="icon i1" style="width:32px;height:32px">📄</div><div><b>Axis XL Spotify anti DC</b></div></a>
+      <a href="https://sfile.co/YngWuHnAw3J" class="item"><div class="num">29</div><div class="icon i4" style="width:32px;height:32px">📄</div><div><b>ISAT EDU 12GB - Indosat IM3</b></div></a>
+
+      <div style="margin-top:16px;padding:12px;background:rgba(0,255,136,.08);border:1px solid rgba(0,255,136,.2);border-radius:10px;font-size:11px;line-height:1.6">
+        Total 29 config free sesuai urutan lu, ingin wuzz stabil? Order premium!!<br><br>
+        🛒 ORDER VIP:<br>
+        <a href="https://wa.me/message/L6LSAZBZMWKCF1?text=MIN%20Mau%20VPN%20VIP%20DONG" style="color:#00ff88">📲 WhatsApp VIP</a><br>
+        <a href="https://cikuya-digitalstore.web.id/VPNVIP1500/" style="color:#00e5ff">📲 Website ORDER: VPNVIP1500</a>
+      </div>
     </div>
   </div>
 
-  <div id="config" class="section"><div class="card"><h3>📁 AMBIL CONFIG</h3><a href="https://sfile.co/jFyfGeBqORn" class="item"><div class="icon i5">⚙️</div><div><b>CONFIG HC DUNIA TUNNELING</b></div></a></div></div>
-  <div id="ssh" class="section"><div class="card"><h3>🚀 SSH GRATIS</h3><a href="https://sfile.co/FVzYPz8yseV" class="item"><div class="icon i1">🚀</div><div><b>AKUN SSH TERBARU GRATIS</b></div></a></div></div>
+  <div id="ssh" class="section"><div class="card"><h3>🚀 SSH GRATIS</h3><a href="https://sfile.co/fVQLqyzlELm" class="item"><div class="icon i1">🚀</div><div><b>AKUN SSH TERBARU GRATIS</b></div></a></div></div>
   <div id="apk" class="section"><div class="card"><h3>📱 APK PREMIUM</h3>
-    <a href="https://sfile.co/a5Ii1QAhZLn" class="item"><div class="icon i2">📱</div><div><b>HTTP CUSTOM LAMA</b><br><small style="opacity:.6">STABIL OLD • NO DC</small></div></a>
-    <a href="https://sfile.co/PWRmwg5RDRL" class="item"><div class="icon i3">🔓</div><div><b>ZIVPN PRO UNLOCK</b><br><small style="opacity:.6">PREMIUM UNLOCKED • NO ADS</small></div></a>
-    <a href="https://sfile.co/uuFGeUn99AR" class="item"><div class="icon i4">🕶️</div><div><b>DARKTUNNEL MOD PREMIUM</b><br><small style="opacity:.6">MOD PREMIUM • TANPA IKLAN • FAST</small></div></a>
+    <a href="https://sfile.co/a5Ii1QAhZLn" class="item"><div class="icon i2">📱</div><div><b>HTTP CUSTOM LAMA</b></div></a>
+    <a href="https://sfile.co/PWRmwg5RDRL" class="item"><div class="icon i3">🔓</div><div><b>ZIVPN PRO UNLOCK</b></div></a>
+    <a href="https://sfile.co/uuFGeUn99AR" class="item"><div class="icon i4">🕶️</div><div><b>DARKTUNNEL MOD PREMIUM</b></div></a>
   </div></div>
-  <div id="qris" class="section"><div class="card qris"><h3 style="justify-content:center">💸 QRIS SUPPORT</h3><img src="qris.png"><p style="font-family:JetBrains Mono;font-size:10px;opacity:.6">Support Dunia Tunneling biar tetap gratis</p></div></div>
-
-  <a href="https://wa.me/6283845286102?text=Halo%20Bang%20Konsultasi" class="btn btn-wa">💬 KONSULTASI VIA WHATSAPP</a>
-  <a href="https://chat.whatsapp.com/BmMe81cA7GLCrRnbSGNJgv" class="btn btn-grup">👥 GABUNG GRUP TUNNELING →</a>
+  <div id="qris" class="section"><div class="card" style="text-align:center;padding:14px"><h3 style="justify-content:center;font-size:11px">💸 DONASI JUM'AT BERKAH</h3><img src="qris.png" class="qris-donasi" onerror="this.src='https://via.placeholder.com/140?text=QRIS'"><p style="font-family:JetBrains Mono;font-size:10px;opacity:.6;margin-top:6px;line-height:1.4">Seikhlasnya 🙏<br>Support biar tetap gratis<br><span style="font-size:9px;opacity:.4">DANA • OVO • GoPay • ShopeePay</span><br><b style="color:#00ff88;font-size:10px">Jazakallah Khairan</b></p></div></div>
 </div>
-
-<div class="share-box" id="shareBox"><div style="padding:6px 8px;background:rgba(0,229,255,.2);border-radius:100px" id="dragHandle">⠿</div><span>🔗 Share Tunneling</span><button onclick="shareWeb()" style="background:#00e5ff;border:0;color:#000;padding:6px 14px;border-radius:100px;font-weight:900;cursor:pointer;font-family:Orbitron;font-size:11px">SHARE 📤</button></div>
+<div class="share-box" id="shareBox"><div style="padding:6px 8px;background:rgba(0,229,255,.2);border-radius:100px" id="dragHandle">⠿</div><span>🔗 Share</span><button onclick="shareWeb()" style="background:#00e5ff;border:0;color:#000;padding:6px 14px;border-radius:100px;font-weight:900;cursor:pointer;font-family:Orbitron;font-size:11px">SHARE 📤</button></div>
 <audio id="bgm" loop></audio>
-
 <script>
-const WEB_URL = 'https://cikuya-digitalstore.web.id';
+const WEB_URL='https://cikuya-digitalstore.web.id';
 function toggleMenu(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('overlay').classList.toggle('show')}
 function go(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.menu-item').forEach(m=>m.classList.remove('active'));event.target.classList.add('active');toggleMenu();window.scrollTo({top:0,behavior:'smooth'})}
-function shareWeb(){if(navigator.share){navigator.share({title:'CIKUYA DIGITAL STORE - DUNIA TUNNELING',text:'Gratis SSH & Config Dunia Tunneling update tiap hari!',url:WEB_URL})}else{navigator.clipboard.writeText(WEB_URL)}}
-const pl=[{s:"musik1.mp3",j:"Cyber Lo-fi"},{s:"musik2.mp3",j:"Night Drive"},{s:"musik3.mp3",j:"Digital Dream"}];let c=0,a=document.getElementById('bgm'),mt=document.getElementById('musicTitle'),tpb=document.getElementById('topPlayBtn');function loadMusic(){a.src=pl[c].s;mt.textContent='♪ '+pl[c].j;a.volume=.4;a.play().then(()=>tpb.textContent='⏸').catch(()=>{})}function toggleMusic(){if(a.paused){a.play();tpb.textContent='⏸'}else{a.pause();tpb.textContent='▶'}}function nextMusic(){c=(c+1)%pl.length;loadMusic()}document.body.addEventListener('click',()=>{if(a.paused)loadMusic()},{once:true});loadMusic();
-const texts=["connecting to dunia tunneling...","metode sholat: KEMENAG RI - MUI & NU...","dunia tunneling berkah untuk semua..."];let ti=0,ci=0;const term=document.getElementById('terminal');function type(){if(ci<texts[ti].length){term.textContent+=texts[ti][ci++];setTimeout(type,40)}else{setTimeout(()=>{term.textContent='';ci=0;ti=(ti+1)%texts.length;type()},1500)}}type();
+function shareWeb(){if(navigator.share){navigator.share({title:'CIKUYA DIGITAL STORE',text:'Gratis SSH & Config Jumat Berkah!',url:WEB_URL})}else{navigator.clipboard.writeText(WEB_URL);alert('Link disalin!')}}
+const pl=[{s:"musik1.mp3",j:"Cyber Lo-fi"},{s:"musik2.mp3",j:"Night Drive"},{s:"musik3.mp3",j:"Digital Dream"}];
+let c=0, a=document.getElementById('bgm'), mt=document.getElementById('musicTitle'), tpb=document.getElementById('topPlayBtn');
+function loadMusic(){a.src=pl[c].s; mt.textContent='♪ '+pl[c].j; a.volume=.4; a.play().then(()=>tpb.textContent='⏸').catch(()=>{})}
+function toggleMusic(){if(a.paused){a.play();tpb.textContent='⏸'}else{a.pause();tpb.textContent='▶'}}
+function nextMusic(){c=(c+1)%pl.length; loadMusic()}
+document.body.addEventListener('click',()=>{if(a.paused)loadMusic()},{once:true}); loadMusic();
+const texts=["connecting to dunia tunneling...","jumat berkah 29 config gratis...","urutan sesuai request..."]; let ti=0,ci=0; const term=document.getElementById('terminal');
+function type(){if(ci<texts[ti].length){term.textContent+=texts[ti][ci++];setTimeout(type,40)}else{setTimeout(()=>{term.textContent='';ci=0;ti=(ti+1)%texts.length;type()},1500)}}type();
 function updateJam(){const n=new Date();document.getElementById('jam').textContent=n.toLocaleTimeString('id-ID',{hour12:false,timeZone:'Asia/Jakarta'});document.getElementById('tanggal').textContent=n.toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Jakarta'})}setInterval(updateJam,1000);updateJam();
-
-// JADWAL SHOLAT SESUAI MUI & NU - KEMENAG RI
 async function getJadwal(){
   try{
-    // method 20 = KEMENAG RI (MUI), school 0 = Syafi'i (NU)
     const r=await fetch(`https://api.aladhan.com/v1/timingsByCity?city=Jakarta&country=Indonesia&method=20&school=0`);
-    const d=await r.json();
-    const t=d.data.timings;
-    const l=[
-      {name:'SUBUH',time:t.Fajr},
-      {name:'SYURUQ',time:t.Sunrise},
-      {name:'DZUHUR',time:t.Dhuhr},
-      {name:'ASHAR',time:t.Asr},
-      {name:'MAGHRIB',time:t.Maghrib},
-      {name:'ISYA',time:t.Isha}
-    ];
+    const d=await r.json(); const t=d.data.timings;
+    const l=[{name:'SUBUH',time:t.Fajr},{name:'DZUHUR',time:t.Dhuhr},{name:'ASHAR',time:t.Asr},{name:'MAGHRIB',time:t.Maghrib},{name:'ISYA',time:t.Isha}];
     document.getElementById('jadwal').innerHTML=l.map(j=>`<div class="sholat-item" id="sholat-${j.name}"><b style="font-size:10px;opacity:.7">${j.name}</b><br><span style="font-family:JetBrains Mono;font-weight:700">${j.time}</span></div>`).join('');
-    const now=new Date();
-    const nowM=now.getHours()*60+now.getMinutes();
-    let next=l[0];
-    for(let j of l){
-      if(j.name==='SYURUQ') continue;
-      const[h,m]=j.time.split(':').map(Number);
-      if(h*60+m>nowM){next=j;break;}
-    }
+    const now=new Date(); const nowM=now.getHours()*60+now.getMinutes(); let next=l[0];
+    for(let j of l){const[h,m]=j.time.split(':').map(Number); if(h*60+m>nowM){next=j;break;}}
     document.querySelectorAll('.sholat-item').forEach(e=>e.classList.remove('active'));
     document.getElementById(`sholat-${next.name}`)?.classList.add('active');
     document.getElementById('nextSholat').textContent=`NEXT: ${next.name} ${next.time}`;
-  }catch(e){
-    document.getElementById('nextSholat').textContent='JADWAL OFFLINE';
-  }
-}
-getJadwal();
-
-const box=document.getElementById('shareBox'),handle=document.getElementById('dragHandle');let drag=false,sx,sy,sl,st;function sd(e){drag=true;const p=e.touches?e.touches[0]:e;sx=p.clientX;sy=p.clientY;const r=box.getBoundingClientRect();sl=r.left;st=r.top;box.style.left=sl+'px';box.style.top=st+'px';box.style.right='auto';box.style.bottom='auto';box.style.transform='none';e.preventDefault()}function od(e){if(!drag)return;const p=e.touches?e.touches[0]:e;box.style.left=(sl+p.clientX-sx)+'px';box.style.top=(st+p.clientY-sy)+'px'}function ed(){drag=false}handle.addEventListener('mousedown',sd);handle.addEventListener('touchstart',sd,{passive:false});document.addEventListener('mousemove',od);document.addEventListener('touchmove',od,{passive:false});document.addEventListener('mouseup',ed);document.addEventListener('touchend',ed);
+  }catch(e){document.getElementById('nextSholat').textContent='JADWAL OFFLINE';}
+} getJadwal();
+const box=document.getElementById('shareBox'),handle=document.getElementById('dragHandle');let drag=false,sx,sy,sl,st;
+function sd(e){drag=true;const p=e.touches?e.touches[0]:e;sx=p.clientX;sy=p.clientY;const r=box.getBoundingClientRect();sl=r.left;st=r.top;box.style.left=sl+'px';box.style.top=st+'px';box.style.right='auto';box.style.bottom='auto';box.style.transform='none';e.preventDefault()}
+function od(e){if(!drag)return;const p=e.touches?e.touches[0]:e;box.style.left=(sl+p.clientX-sx)+'px';box.style.top=(st+p.clientY-sy)+'px'}function ed(){drag=false}
+handle.addEventListener('mousedown',sd);handle.addEventListener('touchstart',sd,{passive:false});document.addEventListener('mousemove',od);document.addEventListener('touchmove',od,{passive:false});document.addEventListener('mouseup',ed);document.addEventListener('touchend',ed);
 </script>
 </body>
 </html>
